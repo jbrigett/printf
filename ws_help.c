@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static wchar_t	*wstrndup(wchar_t *s1, size_t n)
+wchar_t	*wstrndup(wchar_t *s1, size_t n)
 {
 	wchar_t	*s2;
 	size_t	i;
@@ -13,11 +13,11 @@ static wchar_t	*wstrndup(wchar_t *s1, size_t n)
 		s2[i] = s1[i];
 		i++;
 	}
-	s2[i] = '\0';
+	s2[i] = L'\0';
 	return (s2);
 }
 
-static wchar_t	*wstrdup(wchar_t *str)
+wchar_t	*wstrdup(wchar_t *str)
 {
 	int		len;
 
@@ -27,23 +27,18 @@ static wchar_t	*wstrdup(wchar_t *str)
 	return (wstrndup(str, len));
 }
 
-static t_tab	*do_null(t_tab *tab)
+void print_null(t_format *frmt)
 {
-	wchar_t		*s;
-	int			i;
+	wchar_t *wstr;
+	int     i;
 
 	i = 0;
-	s = wstrdup(L"(null)");
-	if (tab->precision > -1)
-	{
-		while (s[i] && tab->precision-- > 0)
-			display_wchar(s[i++], tab);
-	}
+	wstr = wstrdup(L"(null)");
+	if (frmt->prec > -1)
+		while (wstr[i] && frmt->prec-- > 0)
+			print_wchar(wstr[i++], frmt);
 	else
-	{
-		while (s[i])
-			display_wchar(s[i++], tab);
-	}
-	free(s);
-	return (tab);
+		while (wstr[i])
+			print_wchar(wstr[i++], frmt);
+		free(wstr);
 }

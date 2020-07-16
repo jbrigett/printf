@@ -22,7 +22,6 @@
 # define INTMAX		(1 << 11)
 # define SIZE_T		(1 << 12)
 # define LDOUBLE	(1 << 13)
-# define MIN_LEN	(1 << 13)
 # define PRECISION	(1 << 14)
 # define POINTER	(1 << 15)
 
@@ -141,6 +140,13 @@ size_t			ft_wcharlen(wint_t c, t_format *frmt);
 void			print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen);
 int64_t			wslen(wchar_t *wstr, t_format *frmt);
 
+
+/*
+ * HELP FOR WSTRING
+ */
+void            print_null(t_format *frmt);
+wchar_t         *wstrdup(wchar_t *str);
+wchar_t         *wstrndup(wchar_t *s1, size_t n);
 
 /*
  * HELP FUNCTIONS FOR FLOAT
