@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_s.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:55:09 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:20:48 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void 	print_s(t_format *frmt)
+void	print_s(t_format *frmt)
 {
 	char		*s;
 	int			i;
@@ -25,4 +37,3 @@ void 	print_s(t_format *frmt)
 		padding(" ", frmt->width - len, buffer);
 	free(s);
 }
-

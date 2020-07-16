@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser_spec.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:53:02 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:05:52 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	base_parser(t_format *frmt)
@@ -30,13 +42,13 @@ void	mode_parser(t_format *frmt)
 		frmt->func = &pf_printlen;
 	if (frmt->spec == 'm')
 		frmt->func = &pf_puterror;
-	if (frmt->spec== 'p')
+	if (frmt->spec == 'p')
 		frmt->func = &print_pointer_address;
 	else
 		frmt->func = &cs_not_found;
 }
 
-static void	set_upper_flag(char c, t_format *format)
+void	set_upper_flag(char c, t_format *format)
 {
 	if (ft_strchr("DCOSU", c) != NULL)
 	{
@@ -52,7 +64,7 @@ static void	set_upper_flag(char c, t_format *format)
 		format->spec = c;
 }
 
-void		spec_parser(char *string, t_format *format)
+void	spec_parser(char *string, t_format *format)
 {
 	if (!*string)
 		return ;

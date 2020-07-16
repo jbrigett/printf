@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:52:41 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:04:58 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	flag_and_width(char *str, t_format *frmt)
@@ -29,15 +41,16 @@ void	precision_parser(char *str, t_format *frmt)
 {
 	if (*str == '.')
 	{
-		frmt->fl |=  PRECISION;
+		frmt->fl |= PRECISION;
 		++str;
 		if (*str == '*')
 		{
-			if (frmt->prec = (int) va_arg(frmt->ap, int) < 0)
+			if (frmt->prec = (int)va_arg(frmt->ap, int) < 0)
 				frmt->fl &= ~PRECISION;
 			str++;
 		}
-		else {
+		else
+		{
 			frmt->prec = ft_max(ft_atoi(str), 0);
 			while (ft_isdigit(*str))
 				str++;

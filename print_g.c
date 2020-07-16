@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_g.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:54:50 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:20:15 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int32_t compare_fe(long double d, t_format *frmt)
+int32_t	compare_fe(long double d, t_format *frmt)
 {
 	long double	fraction;
 	int64_t		exp;
-	size_t 		len;
+	size_t		len;
 	int64_t		tmp;
 
 	set_exp(frmt, &exp, d);

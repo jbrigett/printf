@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ws_help.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:55:35 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:23:42 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 wchar_t	*wstrndup(wchar_t *s1, size_t n)
@@ -27,10 +39,10 @@ wchar_t	*wstrdup(wchar_t *str)
 	return (wstrndup(str, len));
 }
 
-void print_null(t_format *frmt)
+void	print_null(t_format *frmt)
 {
 	wchar_t *wstr;
-	int     i;
+	int		i;
 
 	i = 0;
 	wstr = wstrdup(L"(null)");
@@ -40,5 +52,5 @@ void print_null(t_format *frmt)
 	else
 		while (wstr[i])
 			print_wchar(wstr[i++], frmt);
-		free(wstr);
+	free(wstr);
 }

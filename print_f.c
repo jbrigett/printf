@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_f.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:54:40 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:18:59 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void		print_sign(long double d, t_format *frmt, t_buffer *buf)
@@ -9,11 +21,11 @@ void		print_sign(long double d, t_format *frmt, t_buffer *buf)
 	PRINT(frmt->prefix, ft_strlen(frmt->prefix), buf);
 }
 
-int	check_spec_val(t_format *frmt, long double n, t_buffer *buf)
+int			check_spec_val(t_format *frmt, long double n, t_buffer *buf)
 {
 	uint64_t	integ;
-	double 		dn;
-	int 		fl;
+	double		dn;
+	int			fl;
 
 	dn = (double)n;
 	integ = *(uint64_t*)&dn;
@@ -31,7 +43,7 @@ int	check_spec_val(t_format *frmt, long double n, t_buffer *buf)
 	return (0);
 }
 
-void	print_fraction(long double fraction, t_format *frmt, t_buffer *buf)
+void		print_fraction(long double fraction, t_format *frmt, t_buffer *buf)
 {
 	uintmax_t abs_f;
 
@@ -43,7 +55,7 @@ void	print_fraction(long double fraction, t_format *frmt, t_buffer *buf)
 	{
 		while (fraction < 0.1 && frmt->prec--)
 		{
-			PRINT("0", 1, buf);;
+			PRINT("0", 1, buf);
 			fraction *= frmt->base;
 		}
 		while (frmt->prec--)
@@ -53,10 +65,10 @@ void	print_fraction(long double fraction, t_format *frmt, t_buffer *buf)
 	}
 }
 
-void	print_f(t_format *frmt, long double d, t_buffer *buf)
+void		print_f(t_format *frmt, long double d, t_buffer *buf)
 {
-	uint64_t 	integer;
-	uintmax_t 	n;
+	uint64_t	integer;
+	uintmax_t	n;
 	long double	fraction;
 
 	if (check_spec_val(frmt, d, buf))
@@ -65,7 +77,8 @@ void	print_f(t_format *frmt, long double d, t_buffer *buf)
 	fraction = ft_fabsl(d) - integer;
 	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
-	frmt->width = frmt->width - length_base(integer, frmt->base) - ft_strlen(frmt->prefix);
+	frmt->width = frmt->width - length_base(integer, frmt->base) -
+		ft_strlen(frmt->prefix);
 	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
 	print_sign(d, frmt, buf);
 	n = (frmt->prec == 0) ? ft_imaxabs(ft_roundl(d)) : integer;

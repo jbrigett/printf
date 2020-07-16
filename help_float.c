@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   help_float.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:50:44 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:01:01 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-//ПРОВЕРИТЬ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-long double ft_fabsl(long double d)
+long double	ft_fabsl(long double d)
 {
 	uintmax_t	res;
 
@@ -10,7 +21,6 @@ long double ft_fabsl(long double d)
 	return (*(long double*)&res);
 }
 
-//ПРОВЕРИТЬ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 uintmax_t	ft_imaxabs(intmax_t n)
 {
 	intmax_t mask;
@@ -20,7 +30,7 @@ uintmax_t	ft_imaxabs(intmax_t n)
 	return (n);
 }
 
-intmax_t ft_roundl(long double d)
+intmax_t	ft_roundl(long double d)
 {
 	intmax_t	integ;
 	long double	fract;

@@ -1,6 +1,18 @@
-# include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:51:04 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:24:31 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
+#include "ft_printf.h"
+
+int	ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	char		*str;
@@ -8,7 +20,7 @@ int ft_printf(const char *format, ...)
 
 	str = (char *)format;
 	init_buffer(&buf);
-	va_start(ap,format);
+	va_start(ap, format);
 	while (*format != '\0')
 	{
 		if (*format == '%')

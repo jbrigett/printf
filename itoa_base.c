@@ -1,18 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   itoa_base.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:52:33 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:03:49 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_strup(char *str)
 {
 	while (*str)
 	{
-		if (*str >= 97 &&  *str <=122)
+		if (*str >= 97 && *str <= 122)
 			*str = *str - 32;
 	}
 }
 
-void	ft_itoa_base(t_format *format, uintmax_t n, char *str, int	mode, size_t len)
+void	ft_itoa_base(t_format *format, uintmax_t n, char *str,
+		int	mode, size_t len)
 {
 	char	*print;
-	size_t		tmp;
+	size_t	tmp;
 
 	print = "0123456789abcdef";
 	format->fl & UPPER ? ft_strup(&print) : 0;
@@ -23,7 +36,6 @@ void	ft_itoa_base(t_format *format, uintmax_t n, char *str, int	mode, size_t len
 		n /= format->base;
 	}
 }
-
 
 void	print_itoa_base(uintmax_t n, t_format *frmt, t_buffer *buf)
 {

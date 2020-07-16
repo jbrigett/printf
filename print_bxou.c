@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_bxou.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:53:33 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:11:47 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	print_prefix(uintmax_t n, t_format *frmt, t_buffer *buf)
@@ -27,7 +39,8 @@ void	set_width_base(t_format *frmt, uintmax_t n)
 		if (frmt->to_print >= frmt->prec)
 			frmt->prec = frmt->to_print + 1;
 	frmt->to_print = ft_max(frmt->to_print, frmt->prec);
-	if (frmt->base == 8 && frmt->fl & SHARP && !n && frmt->fl & PRECISION && frmt->prec <= 0)
+	if (frmt->base == 8 && frmt->fl & SHARP && !n &&
+			frmt->fl & PRECISION && frmt->prec <= 0)
 		++frmt->to_print;
 	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO))
 		frmt->width -= 2;
@@ -37,7 +50,7 @@ void	settings_bxou(uintmax_t n, t_format *frmt, t_buffer *buf)
 {
 	char	str[21];
 
-	if (frmt->fl & PRECISION) //игнор для dioux
+	if (frmt->fl & PRECISION)
 		frmt->fl &= ~ZERO;
 	set_width_base(frmt, n);
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
@@ -52,16 +65,16 @@ void	settings_bxou(uintmax_t n, t_format *frmt, t_buffer *buf)
 }
 
 /*
- * проверить приведение типов
+ ** проверить приведение типов
  */
-void	print_bxou(t_format *frmt, t_buffer *buf)
+void	dprint_bxou(t_format *frmt, t_buffer *buf)
 {
 	uintmax_t n;
 
 	if (frmt->fl & LLONG)
-		n =  (intmax_t)va_arg(frmt->ap, unsigned long long);
+		n = (intmax_t)va_arg(frmt->ap, unsigned long long);
 	else if (frmt->fl & LONG)
-		n =  (intmax_t)va_arg(frmt->ap, unsigned long);
+		n = (intmax_t)va_arg(frmt->ap, unsigned long);
 	else if (frmt->fl & SHORT)
 		n = (short)va_arg(frmt->ap, unsigned int);
 	else if (frmt->fl & SSHORT)
@@ -75,4 +88,3 @@ void	print_bxou(t_format *frmt, t_buffer *buf)
 	(frmt->fl & ZERO) ? frmt->prec = frmt->width : 0;
 	settings_bxou(n, frmt, buf);
 }
-

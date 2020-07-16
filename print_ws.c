@@ -1,5 +1,16 @@
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_ws.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:55:22 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:22:34 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "ft_printf.h"
 
 size_t	ft_wcharlen(wint_t c, t_format *frmt)
 {
@@ -13,7 +24,7 @@ size_t	ft_wcharlen(wint_t c, t_format *frmt)
 		return (4);
 }
 
-void		print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen)
+void	print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen)
 {
 	while ((strlen -= ft_wcharlen(*wstr, frmt)) >= 0)
 		print_wchar(*wstr++, frmt);
@@ -29,7 +40,7 @@ int64_t	wslen(wchar_t *wstr, t_format *frmt)
 	while (*wstr != L'\0')
 	{
 		if (frmt->fl & PRECISION && ft_wcharlen(*wstr, frmt) > (size_t)len)
-			break;
+			break ;
 		strlen += ft_wcharlen(*wstr, frmt);
 		len -= ft_wcharlen(*wstr, frmt);
 		++wstr;
@@ -37,7 +48,6 @@ int64_t	wslen(wchar_t *wstr, t_format *frmt)
 	len = strlen;
 	return (len);
 }
-
 
 void	print_ws(t_format *frmt)
 {

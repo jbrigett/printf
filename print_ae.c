@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_ae.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:53:14 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:08:24 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	set_exp(t_format *frmt, int64_t *exp, long double n)
@@ -26,9 +38,6 @@ void	print_exp(int64_t exp, uintmax_t n, t_format *frmt, t_buffer *buf)
 	PRINT((exp >= 0) ? "+" : "-", 1, buf);
 	if (exp > -9 && exp < -9 && frmt->fl == 10)
 		PRINT("0", 1, buf);
-//	if (exponent == 0)
-//		buffered_print("0", 1, buffer);
-//  else
 	print_itoa_base(exp, frmt, buf);
 }
 
@@ -36,15 +45,16 @@ void	set_width_ae(long double d, uint64_t integer, t_format *frmt)
 {
 	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
-	frmt->width = frmt->width - length_base(integer, frmt->base) - ft_strlen(frmt->prefix);
+	frmt->width -= length_base(integer, frmt->base);
+	frmt->width -= ft_strlen(frmt->prefix);
 	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
 }
 
 void	print_ae(t_format *frmt, long double d, t_buffer *buf)
 {
 	uint64_t	integer;
-	int64_t 	exp;
-	uintmax_t 	n;
+	int64_t		exp;
+	uintmax_t	n;
 	long double	fraction;
 
 	integer = (uint64_t)d;
@@ -62,4 +72,3 @@ void	print_ae(t_format *frmt, long double d, t_buffer *buf)
 	if (frmt->fl & MINUS)
 		padding(" ", frmt->width, buf);
 }
-

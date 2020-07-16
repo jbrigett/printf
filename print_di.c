@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_di.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/16 18:54:32 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/16 19:16:11 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	add_sign(intmax_t n, t_format *frmt, char *str)
@@ -31,7 +43,7 @@ void	settings_d(intmax_t n, t_format *frmt, t_buffer *buf)
 {
 	char str[22];
 
-	if (frmt->fl & PRECISION) //игнорим для dioux
+	if (frmt->fl & PRECISION)
 		frmt->fl &= ~ZERO;
 	if (frmt->fl & ZERO)
 		frmt->prec = frmt->width;
@@ -50,9 +62,9 @@ void	print_di(t_format *frmt, t_buffer *buf)
 	intmax_t n;
 
 	if (frmt->fl & LLONG)
-		n =  (intmax_t)va_arg(frmt->ap, long long);
+		n = (intmax_t)va_arg(frmt->ap, long long);
 	else if (frmt->fl & LONG)
-		n =  (intmax_t)va_arg(frmt->ap, long);
+		n = (intmax_t)va_arg(frmt->ap, long);
 	else if (frmt->fl & SHORT)
 		n = (short)va_arg(frmt->ap, int);
 	else if (frmt->fl & SSHORT)
