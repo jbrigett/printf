@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   not_found.c                                        :+:      :+:    :+:   */
+/*   print_n.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 15:01:17 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:01:57 by jbrigett         ###   ########.fr       */
+/*   Created: 2020/07/21 15:07:10 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/21 15:07:18 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void	cs_not_found(t_format *frmt)
+void	print_n(t_format *format)
 {
-	frmt->width = (frmt->width > 0) ? frmt->width - 1 : 0;
-	if (frmt->fl & MINUS)
-		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width);
-	print_all(frmt, "%", 1);
-	if (frmt->fl & ZERO)
-		padding(frmt, ' ', frmt->width);
+	*va_arg(format->ap, int *) = format->to_print;
 }

@@ -5,7 +5,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <ctype.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 
 # define PLUS		(1 << 0)
 # define MINUS		(1 << 1)
@@ -176,8 +176,8 @@ intmax_t 		ft_roundl(long double d);
 uintmax_t		ft_imaxabs(intmax_t n);
 
 /*
- * HELP FUNCTIONS
- */
+** HELP FUNCTIONS
+*/
 void			init_format(int fd, t_format *format, const char *str);
 void			reinit_format(t_format *format);
 int8_t			ft_isupper(char c);

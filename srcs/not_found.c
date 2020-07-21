@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_all.c                                        :+:      :+:    :+:   */
+/*   not_found.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 15:02:18 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:02:23 by jbrigett         ###   ########.fr       */
+/*   Created: 2020/07/21 15:01:17 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/21 15:01:57 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void	print_all(t_format *frmt, char *str, int len)
+void	cs_not_found(t_format *frmt)
 {
-	int i;
-
-	i = 0;
-	frmt->to_print += len;
-	while (i < len)
-	{
-		write(frmt->fd, &(*str), len);
-		str++;
-		i++;
-	}
-}
-
-void	padding(t_format *frmt, char c, int len)
-{
-	int i;
-
-	i = 0;
-	frmt->to_print += len;
-	while (i < len)
-	{
-		write(frmt->fd, &c, len);
-		i++;
-	}
+	frmt->width = (frmt->width > 0) ? frmt->width - 1 : 0;
+	if (frmt->fl & MINUS)
+		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width);
+	print_all(frmt, "%", 1);
+	if (frmt->fl & ZERO)
+		padding(frmt, ' ', frmt->width);
 }

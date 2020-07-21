@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_percent.c                                    :+:      :+:    :+:   */
+/*   print_all.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 15:02:35 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:02:41 by jbrigett         ###   ########.fr       */
+/*   Created: 2020/07/21 15:02:18 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/21 15:02:23 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	print_percent(t_format *frmt)
+void	print_all(t_format *frmt, char *str, int len)
 {
-	if (!(frmt->fl & MINUS) && frmt->width > 1)
-		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width - 1);
-	print_all(frmt, "%", 1);
-	if (frmt->fl & MINUS && frmt->width > 0)
-		padding(frmt, ' ', frmt->width - 1);
+	int i;
+
+	i = 0;
+	frmt->to_print += len;
+	while (i < len)
+	{
+		write(frmt->fd, &(*str), len);
+		str++;
+		i++;
+	}
+}
+
+void	padding(t_format *frmt, char c, int len)
+{
+	int i;
+
+	i = 0;
+	frmt->to_print += len;
+	while (i < len)
+	{
+		write(frmt->fd, &c, len);
+		i++;
+	}
 }
