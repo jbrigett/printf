@@ -26,20 +26,19 @@ void	set_width(intmax_t n, t_format *frmt)
 {
 	int fl;
 
-	frmt->to_print = 0;
+	frmt->len = 0;
 	fl = (n < 0 || frmt->fl & PLUS || frmt->fl & SPACE) ? 1 : 0;
 	if (fl && frmt->fl & ZERO)
 		--frmt->prec;
 	while (n)
 	{
 		n /= 10;
-		++frmt->to_print;
+		++frmt->len;
 	}
-	frmt->to_print += ft_max(frmt->to_print, frmt->prec);
-	frmt->to_print += fl;
+	frmt->len = ft_max(frmt->len, frmt->prec) + fl;
 }
 
-void	settings_d(intmax_t n, t_format *frmt, t_buffer *buf)
+void	settings_d(intmax_t n, t_format *frmt)
 {
 	char str[22];
 
@@ -49,22 +48,22 @@ void	settings_d(intmax_t n, t_format *frmt, t_buffer *buf)
 		frmt->prec = frmt->width;
 	set_width(n, frmt);
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
-		padding(" ", frmt->width - frmt->to_print, buf);
+		padding(frmt, ' ', frmt->width - frmt->len);
 	add_sign(n, frmt, str);
-	ft_itoa_base(frmt, ft_imaxabs(n), str, 0, 0);
-	PRINT(str, frmt->to_print, buf);
+	itoa_base(frmt, ft_imaxabs(n), str, 0);
+	print_all(frmt, str, frmt->len);
 	if (frmt->fl & MINUS)
-		padding(" ", frmt->width - frmt->to_print, buf);
+		padding(frmt, ' ', frmt->width - frmt->len);
 }
 
-void	print_di(t_format *frmt, t_buffer *buf)
+void	print_di(t_format *frmt)
 {
 	intmax_t n;
 
 	if (frmt->fl & LLONG)
-		n = (intmax_t)va_arg(frmt->ap, long long);
+		n = (long long)va_arg(frmt->ap, long long);
 	else if (frmt->fl & LONG)
-		n = (intmax_t)va_arg(frmt->ap, long);
+		n = (long)va_arg(frmt->ap, long);
 	else if (frmt->fl & SHORT)
 		n = (short)va_arg(frmt->ap, int);
 	else if (frmt->fl & SSHORT)
@@ -73,8 +72,10 @@ void	print_di(t_format *frmt, t_buffer *buf)
 		n = (size_t)va_arg(frmt->ap, size_t);
 	else if (frmt->fl & INTMAX)
 		n = (intmax_t)va_arg(frmt->ap, intmax_t);
+	else if (frmt->fl & PTRDIFF)
+		n = (ptrdiff_t)va_arg(*app, ptrdiff_t);
 	else
 		n = (int)va_arg(frmt->ap, int);
 	(frmt->fl & ZERO) ? frmt->prec = frmt->width : 0;
-	settings_d(n, frmt, buf);
+	settings_d(n, frmt);
 }

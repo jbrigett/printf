@@ -29,23 +29,23 @@ void	base_parser(t_format *frmt)
 void	mode_parser(t_format *frmt)
 {
 	if (ft_memchr("di", frmt->spec, 2))
-		frmt->func = &print_di;
+		print_di(frmt);
 	if (ft_memchr("boux", frmt->spec, 4))
-		frmt->func = &print_bxou;
+		print_bxou(frmt);
 	if (ft_memchr("afge", frmt->spec, 4))
-		frmt->func = &print_aefg;
+		print_aefg;
 	if (frmt->spec == 's')
-		frmt->func = &pf_ft_putstr;
+		print_s(frmt);
 	if (frmt->spec == 'c')
-		frmt->func = &print_c;
+		print_c(frmt);
 	if (frmt->spec == 'n')
-		frmt->func = &pf_printlen;
+		print_n(frmt);
 	if (frmt->spec == 'm')
-		frmt->func = &pf_puterror;
+		pf_puterror(frmt);
 	if (frmt->spec == 'p')
-		frmt->func = &print_pointer_address;
+		print_p(frmt);
 	else
-		frmt->func = &cs_not_found;
+		cs_not_found(frmt);
 }
 
 void	set_upper_flag(char c, t_format *format)
@@ -64,15 +64,15 @@ void	set_upper_flag(char c, t_format *format)
 		format->spec = c;
 }
 
-void	spec_parser(char *string, t_format *format)
+void	spec_parser(char **str, t_format *frmt)
 {
-	if (!*string)
+	if (!*str)
 		return ;
-	if (ft_isupper(*string))
-		set_upper_flag(string, format);
+	if (ft_isupper(**str))
+		set_upper_flag(**str, frmt);
 	else
-		format->spec = *string;
-	string += 1;
-	base_parser(format);
-	mode_parser(format);
+		frmt->spec = **str;
+	++(*str);
+	base_parser(frmt);
+	mode_parser(frmt);
 }

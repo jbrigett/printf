@@ -14,24 +14,56 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list		ap;
-	char		*str;
-	t_buffer	buf;
+	t_format	*frmt;
+	char 		*str;
 
-	str = (char *)format;
-	init_buffer(&buf);
-	va_start(ap, format);
-	while (*format != '\0')
+	if (!(frmt = (t_format*)malloc(sizeof(t_format))))
+		return (-1);
+	init_format(1, frmt, format);
+	str = (char*)format;
+	if (format)
 	{
-		if (*format == '%')
+		va_start(frmt->ap, format);
+		while (*str != '\0')
 		{
-			++format;
-			format = parser(format, &ap, &buf);
+			if (*str == '%')
+				parser(&str, frmt);
+			else
+			{
+				write(1, str, 1);
+				frmt->to_print++;
+			}
 		}
-		else
-			PRINT(str++, 1, &buf);
+		va_end(frmt->ap);
 	}
-	write(1, buf.buffer, buf.buffer_index);
-	va_end(ap);
-	return (buf.bytes_written);
+	free(frmt);
+	return (frmt->len);
+}
+
+int	ft_dprintf(int fd, const char *format, ...)
+{
+	t_format	*frmt;
+	char 		*str;
+
+	if (!(frmt = (t_format*)malloc(sizeof(t_format))))
+		return (-1);
+	init_format(fd, frmt, format);
+	str = (char*)format;
+	if (format)
+	{
+		va_start(frmt->ap, format);
+		while (*str != '\0')
+		{
+			if (*str == '%')
+				parser(&str, frmt);
+			else
+			{
+				write(fd, str, 1);
+				frmt->to_print++;
+			}
+		}
+		va_end(frmt->ap);
+	}
+	free(frmt);
+	return (frmt->len);
 }

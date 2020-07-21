@@ -12,41 +12,42 @@
 
 #include "ft_printf.h"
 
-void	print_prefix(uintmax_t n, t_format *frmt, t_buffer *buf)
+void	print_prefix(uintmax_t n, t_format *frmt)
 {
 	char	*pref;
 
+	pref = "";
 	if (frmt->base == 16)
 		pref = (frmt->fl & UPPER) ? "0X" : "0x";
 	if (frmt->base == 2)
 		pref = (frmt->fl & UPPER) ? "0B" : "0b";
 	if (((n != 0) || frmt->fl & POINTER || frmt->base == 8) && frmt->fl & SHARP)
-		PRINT(pref, ft_strlen(pref), buf);
+		print_all(frmt, pref, ft_strlen(pref));
 }
 
 void	set_width_base(t_format *frmt, uintmax_t n)
 {
 	uintmax_t	tmp;
 
-	frmt->to_print = 0;
+	frmt->len = 0;
 	tmp = n;
 	while (tmp > 0)
 	{
 		tmp /= frmt->base;
-		++frmt->to_print;
+		++frmt->len;
 	}
 	if (frmt->base == 8 && frmt->fl & SHARP)
-		if (frmt->to_print >= frmt->prec)
-			frmt->prec = frmt->to_print + 1;
-	frmt->to_print = ft_max(frmt->to_print, frmt->prec);
+		if (frmt->len >= frmt->prec)
+			frmt->prec = frmt->len + 1;
+	frmt->len = ft_max(frmt->len, frmt->prec);
 	if (frmt->base == 8 && frmt->fl & SHARP && !n &&
 			frmt->fl & PRECISION && frmt->prec <= 0)
-		++frmt->to_print;
+		++frmt->len;
 	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO))
 		frmt->width -= 2;
 }
 
-void	settings_bxou(uintmax_t n, t_format *frmt, t_buffer *buf)
+void	settings_bxou(uintmax_t n, t_format *frmt)
 {
 	char	str[21];
 
@@ -54,37 +55,34 @@ void	settings_bxou(uintmax_t n, t_format *frmt, t_buffer *buf)
 		frmt->fl &= ~ZERO;
 	set_width_base(frmt, n);
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
-		padding(' ', frmt->width - frmt->to_print);
-	print_prefix(n, frmt, buf);
+		padding(frmt, ' ', frmt->width - frmt->len);
+	print_prefix(n, frmt);
 	if (!(frmt->fl & MINUS) && frmt->fl & ZERO && frmt->fl & PRECISION)
-		padding("0", frmt->width - frmt->to_print, buf);
-	print_itoa_base(n, frmt, buf);
-	PRINT(str, frmt->to_print, buf);
+		padding(frmt, '0', frmt->width - frmt->len);
+	itoa_base(frmt, n, str);
+	print_all(frmt, str, frmt->len);
 	if (frmt->fl & MINUS)
-		padding(" ", frmt->width - frmt->to_print, buf);
+		padding(frmt, ' ', frmt->width - frmt->len);
 }
 
-/*
- ** проверить приведение типов
- */
-void	dprint_bxou(t_format *frmt, t_buffer *buf)
+void	print_bxou(t_format *frmt)
 {
 	uintmax_t n;
 
 	if (frmt->fl & LLONG)
-		n = (intmax_t)va_arg(frmt->ap, unsigned long long);
+		n = va_arg(frmt->ap, unsigned long long);
 	else if (frmt->fl & LONG)
-		n = (intmax_t)va_arg(frmt->ap, unsigned long);
+		n = va_arg(frmt->ap, unsigned long);
 	else if (frmt->fl & SHORT)
-		n = (short)va_arg(frmt->ap, unsigned int);
+		n = (unsigned short)va_arg(frmt->ap, unsigned int);
 	else if (frmt->fl & SSHORT)
-		n = (char)va_arg(frmt->ap, unsigned int);
+		n = (unsigned char)va_arg(frmt->ap, unsigned int);
 	else if (frmt->fl & SIZE_T)
 		n = (size_t)va_arg(frmt->ap, size_t);
 	else if (frmt->fl & INTMAX)
-		n = (intmax_t)va_arg(frmt->ap, uintmax_t);
+		n = va_arg(frmt->ap, uintmax_t);
 	else
-		n = (int)va_arg(frmt->ap, unsigned int);
+		n = va_arg(frmt->ap, unsigned int);
 	(frmt->fl & ZERO) ? frmt->prec = frmt->width : 0;
-	settings_bxou(n, frmt, buf);
+	settings_bxou(n, frmt);
 }

@@ -17,44 +17,46 @@ void	ft_strup(char *str)
 	while (*str)
 	{
 		if (*str >= 97 && *str <= 122)
-			*str = *str - 32;
+			*str -= 32;
 	}
 }
 
-void	ft_itoa_base(t_format *format, uintmax_t n, char *str,
-		int	mode, size_t len)
+void	itoa_base(t_format *frmt, uintmax_t n, char *str)
 {
 	char	*print;
 	size_t	tmp;
 
 	print = "0123456789abcdef";
-	format->fl & UPPER ? ft_strup(&print) : 0;
-	tmp = (mode == 1) ? format->to_print : len;
+	frmt->fl & UPPER ? ft_strup(print) : 0;
+	tmp = frmt->len;
 	while (tmp--)
 	{
-		str[tmp] = print[n % format->base];
-		n /= format->base;
+		str[tmp] = print[n % frmt->base];
+		n /= frmt->base;
 	}
 }
 
-void	print_itoa_base(uintmax_t n, t_format *frmt, t_buffer *buf)
+void	print_itoa_base(uintmax_t n, t_format *frmt)
 {
 	uintmax_t	tmp;
 	size_t		len;
-	char		nb_str[33];
+	char		str[33];
 
 	len = 1;
 	tmp = 33;
 	while (tmp-- > 0)
-		nb_str[tmp] = 0;
+		str[tmp] = 0;
 	tmp = n;
 	while ((tmp /= frmt->base) > 0)
 		++len;
 	if ((n == 0) && (frmt->fl & PRECISION) && (frmt->prec == 0))
-		nb_str[0] = '\0';
+		str[0] = '\0';
 	else if (n == 0)
-		nb_str[0] = '0';
+		str[0] = '0';
 	else
-		ft_itoa_base(frmt, n, nb_str, 1, len);
-	PRINT(nb_str, ft_strlen(nb_str), buf);
+	{
+		frmt->len = len;
+		itoa_base(frmt, n, str);
+	}
+	print_all(frmt, str, ft_strlen(str));
 }

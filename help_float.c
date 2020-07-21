@@ -42,3 +42,18 @@ intmax_t	ft_roundl(long double d)
 	else
 		return ((fract > 0.5) ? integ : integ - 1);
 }
+
+size_t		length_base(uintmax_t n, int8_t base)
+{
+	size_t	len;
+
+	if (n == 0)
+		return (1);
+	len = 0;
+	while (n > 0)
+	{
+		n /= base;
+		len++;
+	}
+	return (len);
+}

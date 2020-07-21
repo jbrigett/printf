@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	print_aefg(t_format *frmt, t_buffer *buf)
+void	print_aefg(t_format *frmt)
 {
 	long double n;
 
@@ -23,13 +23,13 @@ void	print_aefg(t_format *frmt, t_buffer *buf)
 	!(frmt->fl & PRECISION) ? frmt->prec = 6 : 0;
 	if (frmt->spec == 'a')
 	{
-		frmt->prec = (frmt->fl & UPPER) ? "0X" : "0x";
-		print_ae(frmt, n, buf);
+		frmt->pref = (frmt->fl & UPPER) ? "0X" : "0x";
+		print_ae(frmt, n);
 	}
 	else if (frmt->spec == 'f')
-		print_f(frmt, n, buf);
+		print_f(frmt, n);
 	else if (frmt->spec == 'g')
-		print_g(n, frmt, buf);
+		print_g(frmt, n);
 	else if (frmt->spec == 'e')
-		print_ae(frmt, n, buf);
+		print_ae(frmt, n);
 }
