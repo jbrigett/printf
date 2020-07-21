@@ -42,12 +42,10 @@ void	mode_parser(t_format *frmt)
 		print_c(frmt);
 	else if (frmt->spec == 'n')
 		print_n(frmt);
-	else if (frmt->spec == 'm')
-		pf_puterror(frmt);
 	else if (frmt->spec == 'p')
 		print_p(frmt);
 	else if (frmt->spec == '%')
-		print_percent(frmt)
+		print_percent(frmt);
 	else
 		cs_not_found(frmt);
 }

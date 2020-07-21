@@ -166,6 +166,7 @@ void			padding(t_format *frmt, char c, int len);
 void            print_null(t_format *frmt);
 wchar_t         *wstrdup(wchar_t *str);
 wchar_t         *wstrndup(wchar_t *s1, size_t n);
+char			*ft_strndup(const char *s1, size_t n);
 
 /*
  * HELP FUNCTIONS FOR FLOAT

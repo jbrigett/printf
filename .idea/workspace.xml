@@ -13,15 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ad40e35b-a1be-4f7f-b747-1c489bb4860f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/not_found.c" beforeDir="false" afterPath="$PROJECT_DIR$/not_found.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser_spec.c" beforeDir="false" afterPath="$PROJECT_DIR$/parser_spec.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_c.c" beforeDir="false" afterPath="$PROJECT_DIR$/print_c.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_di.c" beforeDir="false" afterPath="$PROJECT_DIR$/print_di.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_n.c" beforeDir="false" afterPath="$PROJECT_DIR$/print_n.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_percent.c" beforeDir="false" afterPath="$PROJECT_DIR$/print_percent.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_s.c" beforeDir="false" afterPath="$PROJECT_DIR$/print_s.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_ws.c" beforeDir="false" afterPath="$PROJECT_DIR$/print_ws.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +72,7 @@
       <workItem from="1594889916121" duration="1908000" />
       <workItem from="1594895216966" duration="2377000" />
       <workItem from="1594924468809" duration="5282000" />
-      <workItem from="1594981665335" duration="21837000" />
+      <workItem from="1594981665335" duration="22204000" />
     </task>
     <servers />
   </component>
