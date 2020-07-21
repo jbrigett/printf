@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:51:04 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:24:31 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/21 15:03:40 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf(const char *format, ...)
 {
 	t_format	*frmt;
-	char 		*str;
+	char		*str;
 
 	if (!(frmt = (t_format*)malloc(sizeof(t_format))))
 		return (-1);
@@ -43,7 +43,7 @@ int	ft_printf(const char *format, ...)
 int	ft_dprintf(int fd, const char *format, ...)
 {
 	t_format	*frmt;
-	char 		*str;
+	char		*str;
 
 	if (!(frmt = (t_format*)malloc(sizeof(t_format))))
 		return (-1);

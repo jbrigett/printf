@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:53:14 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:08:24 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/21 15:04:46 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_exp(int64_t exp, uintmax_t n, t_format *frmt)
 	if (frmt->base == 16)
 		print_all(frmt, (frmt->fl & UPPER) ? "P" : "p", 1);
 	else
-		print_all(frmt,(frmt->fl & UPPER) ? "E" : "e", 1);
+		print_all(frmt, (frmt->fl & UPPER) ? "E" : "e", 1);
 	print_all(frmt, (exp >= 0) ? "+" : "-", 1);
 	if (exp > -9 && exp < 9 && frmt->base == 10)
 		print_all(frmt, "0", 1);

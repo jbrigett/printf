@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:52:41 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:04:58 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/21 15:05:35 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	flag_and_width(char **str, t_format *frmt)
 	else if ((frmt->width = ft_max(ft_atoi(*str), 1)))
 		while (ft_isdigit(**str))
 			++(*str);
-//	frmt->fl &= (frmt->fl & MINUS && !(frmt->fl & WILDCARD)) ? ~ZERO : 0;
 }
 
 void	precision_parser(char **str, t_format *frmt)
@@ -92,7 +91,7 @@ void	length_parser(char **str, t_format *frmt)
 	++(*str);
 }
 
-void	parser( char **str, t_format *frmt)
+void	parser(char **str, t_format *frmt)
 {
 	reinit_format(frmt);
 	dollar_parser(str, frmt);

@@ -6,18 +6,18 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:51:18 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 18:51:20 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/21 14:59:52 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-intmax_t 	ft_max(intmax_t a, intmax_t b)
+intmax_t	ft_max(intmax_t a, intmax_t b)
 {
 	return (a > b ? a : b);
 }
 
-void	init_format(int fd, t_format *format, const char *str)
+void		init_format(int fd, t_format *format, const char *str)
 {
 	format->len = 0;
 	format->fd = fd;
@@ -28,24 +28,23 @@ void	init_format(int fd, t_format *format, const char *str)
 	format->str = str;
 }
 
-void	reinit_format(t_format *format)
+void		reinit_format(t_format *format)
 {
 	format->width = -1;
 	format->prec = 1;
 	format->spec = '\0';
 	format->base = 0;
 	format->len = 0;
-
 }
 
-int8_t	ft_isupper(char c)
+int8_t		ft_isupper(char c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }
 
-int		ft_strchr_index(const char *s, int c)
+int			ft_strchr_index(const char *s, int c)
 {
 	int		i;
 
