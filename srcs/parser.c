@@ -12,29 +12,6 @@
 
 #include "../includes/ft_printf.h"
 
-void	dollar_parser(char **str, t_format *frmt)
-{
-	int		nbr;
-	char	*tmp;
-
-	if (!ft_isdigit(**str))
-		return ;
-	nbr = 0;
-	tmp = *str;
-	while (ft_isdigit(**str))
-	{
-		nbr = nbr * 10 + (**str - '0');
-		++(*str);
-	}
-	if (**str != '$')
-	{
-		*str = tmp;
-		return ;
-	}
-	++(*str);
-	frmt->order = nbr;
-}
-
 void	flag_and_width(char **str, t_format *frmt)
 {
 	int n;
@@ -94,7 +71,6 @@ void	length_parser(char **str, t_format *frmt)
 void	parser(char **str, t_format *frmt)
 {
 	reinit_format(frmt);
-	dollar_parser(str, frmt);
 	flag_and_width(str, frmt);
 	precision_parser(str, frmt);
 	length_parser(str, frmt);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcope <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 23:01:38 by jcope             #+#    #+#             */
-/*   Updated: 2018/10/22 23:02:56 by jcope            ###   ########.fr       */
+/*   Created: 2019/09/08 14:32:37 by jbrigett          #+#    #+#             */
+/*   Updated: 2019/09/18 17:07:44 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char const *end;
+	size_t i;
+	size_t j;
 
 	if (!s)
 		return (NULL);
-	while (ft_isspace(*s))
-		s++;
-	if (*s == '\0')
-		return (ft_strnew(0));
-	end = s + ft_strlen(s) - 1;
-	while (ft_isspace(*end))
-		end--;
-	return (ft_strsub(s, 0, end - s + 1));
+	i = 0;
+	j = ft_strlen(s) - 1;
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		i++;
+	while ((s[j] == ' ' || s[j] == '\t' || s[j] == '\n')
+		&& j > i)
+		j--;
+	return (ft_strsub(s, i, (j - i + 1)));
 }

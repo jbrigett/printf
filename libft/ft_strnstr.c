@@ -3,31 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcope <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 23:01:37 by jcope             #+#    #+#             */
-/*   Updated: 2018/10/22 23:02:56 by jcope            ###   ########.fr       */
+/*   Created: 2019/09/11 12:57:24 by jbrigett          #+#    #+#             */
+/*   Updated: 2019/09/18 21:15:55 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strnstr(const char *hay, const char *needle, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	size_t i;
+	unsigned int pos;
+	unsigned int i;
 
-	i = 0;
-	if (!*needle)
-		return ((char*)hay);
-	while (hay[i] && i < len)
+	if (!*s2)
+		return ((char*)s1);
+	pos = 0;
+	while (s1[pos] != '\0' && (size_t)pos < len)
 	{
-		if (ft_strncmp((char *)&hay[i], needle, ft_strlen(needle)) == 0)
+		if (s1[pos] == s2[0])
 		{
-			if (i + ft_strlen(needle) > len)
-				return (NULL);
-			return ((char*)&hay[i]);
+			i = 1;
+			while (s2[i] != '\0' && s1[pos + i] == s2[i] &&
+					(size_t)(pos + i) < len)
+				++i;
+			if (s2[i] == '\0')
+				return ((char*)&s1[pos]);
 		}
-		i++;
+		++pos;
 	}
-	return (NULL);
+	return (0);
 }

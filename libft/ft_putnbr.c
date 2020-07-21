@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcope <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 23:01:34 by jcope             #+#    #+#             */
-/*   Updated: 2018/10/22 23:02:53 by jcope            ###   ########.fr       */
+/*   Created: 2019/09/15 15:00:43 by jbrigett          #+#    #+#             */
+/*   Updated: 2019/09/18 15:15:41 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putnbr_fd(n, 1);
+	unsigned int	res;
+
+	if (n < 0)
+		ft_putchar('-');
+	res = (n < 0 ? -n : n);
+	if (res / 10 > 0)
+		ft_putnbr(res / 10);
+	ft_putchar(res % 10 + '0');
 }

@@ -29,7 +29,7 @@ void	set_exp(t_format *frmt, int64_t *exp, long double n)
 		}
 }
 
-void	print_exp(int64_t exp, uintmax_t n, t_format *frmt)
+void	print_exp(int64_t exp, t_format *frmt)
 {
 	if (frmt->base == 16)
 		print_all(frmt, (frmt->fl & UPPER) ? "P" : "p", 1);
@@ -67,7 +67,7 @@ void	print_ae(t_format *frmt, long double d)
 	if (frmt->fl & SHARP || frmt->prec > 0)
 		print_fraction(fraction, frmt);
 	n = ft_imaxabs(exp);
-	print_exp(exp, n, frmt);
+	print_exp(exp, frmt);
 	if (frmt->fl & MINUS)
 		padding(frmt, ' ', frmt->width);
 }

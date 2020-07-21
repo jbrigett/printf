@@ -3,33 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcope <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 23:01:33 by jcope             #+#    #+#             */
-/*   Updated: 2018/10/22 23:02:53 by jcope            ###   ########.fr       */
+/*   Created: 2019/09/11 16:04:51 by jbrigett          #+#    #+#             */
+/*   Updated: 2019/09/11 19:24:20 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int number;
-	int sign;
+	long long	tmp;
+	long long	res;
+	int			signe;
 
-	number = 0;
-	sign = 1;
-	while (*str == '\n' || *str == ' ' || *str == '\t' || *str == '\r' ||
-			*str == '\f' || *str == '\v')
+	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
-		sign = -1;
+	signe = (*str == '-') ? -1 : 1;
 	if (*str == '-' || *str == '+')
 		str++;
-	while (*str >= '0' && *str <= '9')
+	res = 0;
+	while (ft_isdigit(*str))
 	{
-		number = number * 10 + *str - '0';
+		tmp = res;
+		res = res * 10 + (*str - '0');
+		if (tmp != (res - (*str - '0')) / 10 || res < 0)
+			return (-1 * (signe + 1) / 2);
 		str++;
 	}
-	return ((int)(number * sign));
+	return (signe < 0 ? -res : res);
 }

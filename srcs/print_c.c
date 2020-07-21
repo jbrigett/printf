@@ -33,7 +33,7 @@
 ** два старших бита всегда устанавливаются равными 10xxxxxx
 */
 
-static void		oct_4(wint_t c, t_format *frmt)
+void		oct_4(wint_t c, t_format *frmt)
 {
 	unsigned char oct[4];
 
@@ -45,7 +45,7 @@ static void		oct_4(wint_t c, t_format *frmt)
 	frmt->to_print += 4;
 }
 
-static void		oct_3(wint_t c, t_format *frmt)
+void		oct_3(wint_t c, t_format *frmt)
 {
 	unsigned char oct[3];
 
@@ -56,7 +56,7 @@ static void		oct_3(wint_t c, t_format *frmt)
 	frmt->to_print += 3;
 }
 
-static void		oct_2(wint_t c, t_format *frmt)
+void		oct_2(wint_t c, t_format *frmt)
 {
 	unsigned char oct[2];
 

@@ -5,8 +5,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <ctype.h>
-# include "../libft/libft.h"
-
 # define PLUS		(1 << 0)
 # define MINUS		(1 << 1)
 # define SHARP		(1 << 2)
@@ -41,7 +39,6 @@ typedef struct	s_format
 	int32_t 	prec;
 	int 		base;
 	int32_t 	to_print;
-	int 		order;
 	char 		spec;
 	char		*pref;
 	va_list 	ap;
@@ -62,7 +59,7 @@ void			print_n(t_format *format);
 /*
  * Parsing each argument's format string
  */
-void			parser(char **str, t_format *frmt,);
+void			parser(char **str, t_format *frmt);
 void			flag_and_width(char **str, t_format *frmt);
 void			precision_parser(char **str, t_format *frmt);
 void			length_parser(char **str, t_format *frmt);
@@ -70,7 +67,6 @@ void			spec_parser(char **str, t_format *frmt);
 void			base_parser(t_format *frmt);
 void			mode_parser(t_format *frmt);
 void			set_upper_flag(char c, t_format *format);
-void			dollar_parser(char **str, t_format *frmt);
 
 /*
  * ITOA W/ BASE
@@ -113,7 +109,7 @@ void			print_fraction(long double fraction, t_format *frmt);
  */
 void			print_ae(t_format *frmt, long double d);
 void			set_exp(t_format *frmt, int64_t *exp, long double n);
-void			print_exp(int64_t exp, uintmax_t n, t_format *frmt);
+void			print_exp(int64_t exp, t_format *frmt);
 void			set_width_ae(long double d, uint64_t integer, t_format *frmt);
 
 /*
@@ -127,9 +123,9 @@ int32_t 		compare_fe(long double d, t_format *frmt);
  */
 void			*print_c(t_format *frmt);
 void			print_wchar(wint_t c, t_format *frmt);
-static void		oct_2(wint_t c, t_format *frmt);
-static void		oct_3(wint_t c, t_format *frmt);
-static void		oct_4(wint_t c, t_format *frmt);
+void		oct_2(wint_t c, t_format *frmt);
+void		oct_3(wint_t c, t_format *frmt);
+void		oct_4(wint_t c, t_format *frmt);
 
 /*
  * print S
@@ -185,4 +181,15 @@ intmax_t 		ft_max(intmax_t a, intmax_t b);
 size_t			length_base(uintmax_t n, int8_t base);
 int				ft_strchr_index(const char *s, int c);
 
+/*
+ * from LIBFT
+ */
+size_t      	ft_strlen(const char *s);
+char	        *ft_strdup(const char *s1);
+int	            ft_atoi(const char *str);
+int	            ft_isspace(int c);
+void	        *ft_memchr(const void *s, int c, size_t n);
+char	        *ft_strchr(const char *s, int c);
+char        	*ft_strcpy(char *dst, const char *src);
+int		        ft_isdigit(int c);
 #endif

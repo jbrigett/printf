@@ -150,545 +150,545 @@ ft_printf.c.s:
 	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/ft_printf.c.s
 .PHONY : ft_printf.c.s
 
-help.o: help.c.o
+srcs/help.o: srcs/help.c.o
 
-.PHONY : help.o
-
-# target to build an object file
-help.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/help.c.o
-.PHONY : help.c.o
-
-help.i: help.c.i
-
-.PHONY : help.i
-
-# target to preprocess a source file
-help.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/help.c.i
-.PHONY : help.c.i
-
-help.s: help.c.s
-
-.PHONY : help.s
-
-# target to generate assembly for a file
-help.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/help.c.s
-.PHONY : help.c.s
-
-help_float.o: help_float.c.o
-
-.PHONY : help_float.o
+.PHONY : srcs/help.o
 
 # target to build an object file
-help_float.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/help_float.c.o
-.PHONY : help_float.c.o
+srcs/help.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/help.c.o
+.PHONY : srcs/help.c.o
 
-help_float.i: help_float.c.i
+srcs/help.i: srcs/help.c.i
 
-.PHONY : help_float.i
+.PHONY : srcs/help.i
 
 # target to preprocess a source file
-help_float.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/help_float.c.i
-.PHONY : help_float.c.i
+srcs/help.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/help.c.i
+.PHONY : srcs/help.c.i
 
-help_float.s: help_float.c.s
+srcs/help.s: srcs/help.c.s
 
-.PHONY : help_float.s
+.PHONY : srcs/help.s
 
 # target to generate assembly for a file
-help_float.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/help_float.c.s
-.PHONY : help_float.c.s
+srcs/help.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/help.c.s
+.PHONY : srcs/help.c.s
 
-itoa_base.o: itoa_base.c.o
+srcs/help_float.o: srcs/help_float.c.o
 
-.PHONY : itoa_base.o
+.PHONY : srcs/help_float.o
 
 # target to build an object file
-itoa_base.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/itoa_base.c.o
-.PHONY : itoa_base.c.o
+srcs/help_float.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/help_float.c.o
+.PHONY : srcs/help_float.c.o
 
-itoa_base.i: itoa_base.c.i
+srcs/help_float.i: srcs/help_float.c.i
 
-.PHONY : itoa_base.i
+.PHONY : srcs/help_float.i
 
 # target to preprocess a source file
-itoa_base.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/itoa_base.c.i
-.PHONY : itoa_base.c.i
+srcs/help_float.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/help_float.c.i
+.PHONY : srcs/help_float.c.i
 
-itoa_base.s: itoa_base.c.s
+srcs/help_float.s: srcs/help_float.c.s
 
-.PHONY : itoa_base.s
+.PHONY : srcs/help_float.s
 
 # target to generate assembly for a file
-itoa_base.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/itoa_base.c.s
-.PHONY : itoa_base.c.s
+srcs/help_float.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/help_float.c.s
+.PHONY : srcs/help_float.c.s
 
-not_found.o: not_found.c.o
+srcs/itoa_base.o: srcs/itoa_base.c.o
 
-.PHONY : not_found.o
+.PHONY : srcs/itoa_base.o
 
 # target to build an object file
-not_found.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/not_found.c.o
-.PHONY : not_found.c.o
+srcs/itoa_base.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/itoa_base.c.o
+.PHONY : srcs/itoa_base.c.o
 
-not_found.i: not_found.c.i
+srcs/itoa_base.i: srcs/itoa_base.c.i
 
-.PHONY : not_found.i
+.PHONY : srcs/itoa_base.i
 
 # target to preprocess a source file
-not_found.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/not_found.c.i
-.PHONY : not_found.c.i
+srcs/itoa_base.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/itoa_base.c.i
+.PHONY : srcs/itoa_base.c.i
 
-not_found.s: not_found.c.s
+srcs/itoa_base.s: srcs/itoa_base.c.s
 
-.PHONY : not_found.s
+.PHONY : srcs/itoa_base.s
 
 # target to generate assembly for a file
-not_found.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/not_found.c.s
-.PHONY : not_found.c.s
+srcs/itoa_base.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/itoa_base.c.s
+.PHONY : srcs/itoa_base.c.s
 
-parser.o: parser.c.o
+srcs/not_found.o: srcs/not_found.c.o
 
-.PHONY : parser.o
+.PHONY : srcs/not_found.o
 
 # target to build an object file
-parser.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/parser.c.o
-.PHONY : parser.c.o
+srcs/not_found.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/not_found.c.o
+.PHONY : srcs/not_found.c.o
 
-parser.i: parser.c.i
+srcs/not_found.i: srcs/not_found.c.i
 
-.PHONY : parser.i
+.PHONY : srcs/not_found.i
 
 # target to preprocess a source file
-parser.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/parser.c.i
-.PHONY : parser.c.i
+srcs/not_found.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/not_found.c.i
+.PHONY : srcs/not_found.c.i
 
-parser.s: parser.c.s
+srcs/not_found.s: srcs/not_found.c.s
 
-.PHONY : parser.s
+.PHONY : srcs/not_found.s
 
 # target to generate assembly for a file
-parser.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/parser.c.s
-.PHONY : parser.c.s
+srcs/not_found.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/not_found.c.s
+.PHONY : srcs/not_found.c.s
 
-parser_spec.o: parser_spec.c.o
+srcs/parser.o: srcs/parser.c.o
 
-.PHONY : parser_spec.o
+.PHONY : srcs/parser.o
 
 # target to build an object file
-parser_spec.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/parser_spec.c.o
-.PHONY : parser_spec.c.o
+srcs/parser.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/parser.c.o
+.PHONY : srcs/parser.c.o
 
-parser_spec.i: parser_spec.c.i
+srcs/parser.i: srcs/parser.c.i
 
-.PHONY : parser_spec.i
+.PHONY : srcs/parser.i
 
 # target to preprocess a source file
-parser_spec.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/parser_spec.c.i
-.PHONY : parser_spec.c.i
+srcs/parser.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/parser.c.i
+.PHONY : srcs/parser.c.i
 
-parser_spec.s: parser_spec.c.s
+srcs/parser.s: srcs/parser.c.s
 
-.PHONY : parser_spec.s
+.PHONY : srcs/parser.s
 
 # target to generate assembly for a file
-parser_spec.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/parser_spec.c.s
-.PHONY : parser_spec.c.s
+srcs/parser.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/parser.c.s
+.PHONY : srcs/parser.c.s
 
-print_ae.o: print_ae.c.o
+srcs/parser_spec.o: srcs/parser_spec.c.o
 
-.PHONY : print_ae.o
+.PHONY : srcs/parser_spec.o
 
 # target to build an object file
-print_ae.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_ae.c.o
-.PHONY : print_ae.c.o
+srcs/parser_spec.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/parser_spec.c.o
+.PHONY : srcs/parser_spec.c.o
 
-print_ae.i: print_ae.c.i
+srcs/parser_spec.i: srcs/parser_spec.c.i
 
-.PHONY : print_ae.i
+.PHONY : srcs/parser_spec.i
 
 # target to preprocess a source file
-print_ae.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_ae.c.i
-.PHONY : print_ae.c.i
+srcs/parser_spec.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/parser_spec.c.i
+.PHONY : srcs/parser_spec.c.i
 
-print_ae.s: print_ae.c.s
+srcs/parser_spec.s: srcs/parser_spec.c.s
 
-.PHONY : print_ae.s
+.PHONY : srcs/parser_spec.s
 
 # target to generate assembly for a file
-print_ae.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_ae.c.s
-.PHONY : print_ae.c.s
+srcs/parser_spec.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/parser_spec.c.s
+.PHONY : srcs/parser_spec.c.s
 
-print_aefg.o: print_aefg.c.o
+srcs/print_ae.o: srcs/print_ae.c.o
 
-.PHONY : print_aefg.o
+.PHONY : srcs/print_ae.o
 
 # target to build an object file
-print_aefg.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_aefg.c.o
-.PHONY : print_aefg.c.o
+srcs/print_ae.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_ae.c.o
+.PHONY : srcs/print_ae.c.o
 
-print_aefg.i: print_aefg.c.i
+srcs/print_ae.i: srcs/print_ae.c.i
 
-.PHONY : print_aefg.i
+.PHONY : srcs/print_ae.i
 
 # target to preprocess a source file
-print_aefg.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_aefg.c.i
-.PHONY : print_aefg.c.i
+srcs/print_ae.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_ae.c.i
+.PHONY : srcs/print_ae.c.i
 
-print_aefg.s: print_aefg.c.s
+srcs/print_ae.s: srcs/print_ae.c.s
 
-.PHONY : print_aefg.s
+.PHONY : srcs/print_ae.s
 
 # target to generate assembly for a file
-print_aefg.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_aefg.c.s
-.PHONY : print_aefg.c.s
+srcs/print_ae.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_ae.c.s
+.PHONY : srcs/print_ae.c.s
 
-print_all.o: print_all.c.o
+srcs/print_aefg.o: srcs/print_aefg.c.o
 
-.PHONY : print_all.o
+.PHONY : srcs/print_aefg.o
 
 # target to build an object file
-print_all.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_all.c.o
-.PHONY : print_all.c.o
+srcs/print_aefg.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_aefg.c.o
+.PHONY : srcs/print_aefg.c.o
 
-print_all.i: print_all.c.i
+srcs/print_aefg.i: srcs/print_aefg.c.i
 
-.PHONY : print_all.i
+.PHONY : srcs/print_aefg.i
 
 # target to preprocess a source file
-print_all.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_all.c.i
-.PHONY : print_all.c.i
+srcs/print_aefg.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_aefg.c.i
+.PHONY : srcs/print_aefg.c.i
 
-print_all.s: print_all.c.s
+srcs/print_aefg.s: srcs/print_aefg.c.s
 
-.PHONY : print_all.s
+.PHONY : srcs/print_aefg.s
 
 # target to generate assembly for a file
-print_all.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_all.c.s
-.PHONY : print_all.c.s
+srcs/print_aefg.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_aefg.c.s
+.PHONY : srcs/print_aefg.c.s
 
-print_bxou.o: print_bxou.c.o
+srcs/print_all.o: srcs/print_all.c.o
 
-.PHONY : print_bxou.o
+.PHONY : srcs/print_all.o
 
 # target to build an object file
-print_bxou.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_bxou.c.o
-.PHONY : print_bxou.c.o
+srcs/print_all.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_all.c.o
+.PHONY : srcs/print_all.c.o
 
-print_bxou.i: print_bxou.c.i
+srcs/print_all.i: srcs/print_all.c.i
 
-.PHONY : print_bxou.i
+.PHONY : srcs/print_all.i
 
 # target to preprocess a source file
-print_bxou.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_bxou.c.i
-.PHONY : print_bxou.c.i
+srcs/print_all.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_all.c.i
+.PHONY : srcs/print_all.c.i
 
-print_bxou.s: print_bxou.c.s
+srcs/print_all.s: srcs/print_all.c.s
 
-.PHONY : print_bxou.s
+.PHONY : srcs/print_all.s
 
 # target to generate assembly for a file
-print_bxou.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_bxou.c.s
-.PHONY : print_bxou.c.s
+srcs/print_all.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_all.c.s
+.PHONY : srcs/print_all.c.s
 
-print_c.o: print_c.c.o
+srcs/print_bxou.o: srcs/print_bxou.c.o
 
-.PHONY : print_c.o
+.PHONY : srcs/print_bxou.o
 
 # target to build an object file
-print_c.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_c.c.o
-.PHONY : print_c.c.o
+srcs/print_bxou.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_bxou.c.o
+.PHONY : srcs/print_bxou.c.o
 
-print_c.i: print_c.c.i
+srcs/print_bxou.i: srcs/print_bxou.c.i
 
-.PHONY : print_c.i
+.PHONY : srcs/print_bxou.i
 
 # target to preprocess a source file
-print_c.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_c.c.i
-.PHONY : print_c.c.i
+srcs/print_bxou.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_bxou.c.i
+.PHONY : srcs/print_bxou.c.i
 
-print_c.s: print_c.c.s
+srcs/print_bxou.s: srcs/print_bxou.c.s
 
-.PHONY : print_c.s
+.PHONY : srcs/print_bxou.s
 
 # target to generate assembly for a file
-print_c.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_c.c.s
-.PHONY : print_c.c.s
+srcs/print_bxou.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_bxou.c.s
+.PHONY : srcs/print_bxou.c.s
 
-print_di.o: print_di.c.o
+srcs/print_c.o: srcs/print_c.c.o
 
-.PHONY : print_di.o
+.PHONY : srcs/print_c.o
 
 # target to build an object file
-print_di.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_di.c.o
-.PHONY : print_di.c.o
+srcs/print_c.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_c.c.o
+.PHONY : srcs/print_c.c.o
 
-print_di.i: print_di.c.i
+srcs/print_c.i: srcs/print_c.c.i
 
-.PHONY : print_di.i
+.PHONY : srcs/print_c.i
 
 # target to preprocess a source file
-print_di.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_di.c.i
-.PHONY : print_di.c.i
+srcs/print_c.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_c.c.i
+.PHONY : srcs/print_c.c.i
 
-print_di.s: print_di.c.s
+srcs/print_c.s: srcs/print_c.c.s
 
-.PHONY : print_di.s
+.PHONY : srcs/print_c.s
 
 # target to generate assembly for a file
-print_di.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_di.c.s
-.PHONY : print_di.c.s
+srcs/print_c.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_c.c.s
+.PHONY : srcs/print_c.c.s
 
-print_f.o: print_f.c.o
+srcs/print_di.o: srcs/print_di.c.o
 
-.PHONY : print_f.o
+.PHONY : srcs/print_di.o
 
 # target to build an object file
-print_f.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_f.c.o
-.PHONY : print_f.c.o
+srcs/print_di.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_di.c.o
+.PHONY : srcs/print_di.c.o
 
-print_f.i: print_f.c.i
+srcs/print_di.i: srcs/print_di.c.i
 
-.PHONY : print_f.i
+.PHONY : srcs/print_di.i
 
 # target to preprocess a source file
-print_f.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_f.c.i
-.PHONY : print_f.c.i
+srcs/print_di.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_di.c.i
+.PHONY : srcs/print_di.c.i
 
-print_f.s: print_f.c.s
+srcs/print_di.s: srcs/print_di.c.s
 
-.PHONY : print_f.s
+.PHONY : srcs/print_di.s
 
 # target to generate assembly for a file
-print_f.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_f.c.s
-.PHONY : print_f.c.s
+srcs/print_di.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_di.c.s
+.PHONY : srcs/print_di.c.s
 
-print_g.o: print_g.c.o
+srcs/print_f.o: srcs/print_f.c.o
 
-.PHONY : print_g.o
+.PHONY : srcs/print_f.o
 
 # target to build an object file
-print_g.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_g.c.o
-.PHONY : print_g.c.o
+srcs/print_f.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_f.c.o
+.PHONY : srcs/print_f.c.o
 
-print_g.i: print_g.c.i
+srcs/print_f.i: srcs/print_f.c.i
 
-.PHONY : print_g.i
+.PHONY : srcs/print_f.i
 
 # target to preprocess a source file
-print_g.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_g.c.i
-.PHONY : print_g.c.i
+srcs/print_f.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_f.c.i
+.PHONY : srcs/print_f.c.i
 
-print_g.s: print_g.c.s
+srcs/print_f.s: srcs/print_f.c.s
 
-.PHONY : print_g.s
+.PHONY : srcs/print_f.s
 
 # target to generate assembly for a file
-print_g.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_g.c.s
-.PHONY : print_g.c.s
+srcs/print_f.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_f.c.s
+.PHONY : srcs/print_f.c.s
 
-print_n.o: print_n.c.o
+srcs/print_g.o: srcs/print_g.c.o
 
-.PHONY : print_n.o
+.PHONY : srcs/print_g.o
 
 # target to build an object file
-print_n.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_n.c.o
-.PHONY : print_n.c.o
+srcs/print_g.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_g.c.o
+.PHONY : srcs/print_g.c.o
 
-print_n.i: print_n.c.i
+srcs/print_g.i: srcs/print_g.c.i
 
-.PHONY : print_n.i
+.PHONY : srcs/print_g.i
 
 # target to preprocess a source file
-print_n.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_n.c.i
-.PHONY : print_n.c.i
+srcs/print_g.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_g.c.i
+.PHONY : srcs/print_g.c.i
 
-print_n.s: print_n.c.s
+srcs/print_g.s: srcs/print_g.c.s
 
-.PHONY : print_n.s
+.PHONY : srcs/print_g.s
 
 # target to generate assembly for a file
-print_n.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_n.c.s
-.PHONY : print_n.c.s
+srcs/print_g.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_g.c.s
+.PHONY : srcs/print_g.c.s
 
-print_p.o: print_p.c.o
+srcs/print_n.o: srcs/print_n.c.o
 
-.PHONY : print_p.o
+.PHONY : srcs/print_n.o
 
 # target to build an object file
-print_p.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_p.c.o
-.PHONY : print_p.c.o
+srcs/print_n.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_n.c.o
+.PHONY : srcs/print_n.c.o
 
-print_p.i: print_p.c.i
+srcs/print_n.i: srcs/print_n.c.i
 
-.PHONY : print_p.i
+.PHONY : srcs/print_n.i
 
 # target to preprocess a source file
-print_p.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_p.c.i
-.PHONY : print_p.c.i
+srcs/print_n.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_n.c.i
+.PHONY : srcs/print_n.c.i
 
-print_p.s: print_p.c.s
+srcs/print_n.s: srcs/print_n.c.s
 
-.PHONY : print_p.s
+.PHONY : srcs/print_n.s
 
 # target to generate assembly for a file
-print_p.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_p.c.s
-.PHONY : print_p.c.s
+srcs/print_n.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_n.c.s
+.PHONY : srcs/print_n.c.s
 
-print_percent.o: print_percent.c.o
+srcs/print_p.o: srcs/print_p.c.o
 
-.PHONY : print_percent.o
+.PHONY : srcs/print_p.o
 
 # target to build an object file
-print_percent.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_percent.c.o
-.PHONY : print_percent.c.o
+srcs/print_p.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_p.c.o
+.PHONY : srcs/print_p.c.o
 
-print_percent.i: print_percent.c.i
+srcs/print_p.i: srcs/print_p.c.i
 
-.PHONY : print_percent.i
+.PHONY : srcs/print_p.i
 
 # target to preprocess a source file
-print_percent.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_percent.c.i
-.PHONY : print_percent.c.i
+srcs/print_p.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_p.c.i
+.PHONY : srcs/print_p.c.i
 
-print_percent.s: print_percent.c.s
+srcs/print_p.s: srcs/print_p.c.s
 
-.PHONY : print_percent.s
+.PHONY : srcs/print_p.s
 
 # target to generate assembly for a file
-print_percent.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_percent.c.s
-.PHONY : print_percent.c.s
+srcs/print_p.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_p.c.s
+.PHONY : srcs/print_p.c.s
 
-print_s.o: print_s.c.o
+srcs/print_percent.o: srcs/print_percent.c.o
 
-.PHONY : print_s.o
+.PHONY : srcs/print_percent.o
 
 # target to build an object file
-print_s.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_s.c.o
-.PHONY : print_s.c.o
+srcs/print_percent.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_percent.c.o
+.PHONY : srcs/print_percent.c.o
 
-print_s.i: print_s.c.i
+srcs/print_percent.i: srcs/print_percent.c.i
 
-.PHONY : print_s.i
+.PHONY : srcs/print_percent.i
 
 # target to preprocess a source file
-print_s.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_s.c.i
-.PHONY : print_s.c.i
+srcs/print_percent.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_percent.c.i
+.PHONY : srcs/print_percent.c.i
 
-print_s.s: print_s.c.s
+srcs/print_percent.s: srcs/print_percent.c.s
 
-.PHONY : print_s.s
+.PHONY : srcs/print_percent.s
 
 # target to generate assembly for a file
-print_s.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_s.c.s
-.PHONY : print_s.c.s
+srcs/print_percent.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_percent.c.s
+.PHONY : srcs/print_percent.c.s
 
-print_ws.o: print_ws.c.o
+srcs/print_s.o: srcs/print_s.c.o
 
-.PHONY : print_ws.o
+.PHONY : srcs/print_s.o
 
 # target to build an object file
-print_ws.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_ws.c.o
-.PHONY : print_ws.c.o
+srcs/print_s.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_s.c.o
+.PHONY : srcs/print_s.c.o
 
-print_ws.i: print_ws.c.i
+srcs/print_s.i: srcs/print_s.c.i
 
-.PHONY : print_ws.i
+.PHONY : srcs/print_s.i
 
 # target to preprocess a source file
-print_ws.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_ws.c.i
-.PHONY : print_ws.c.i
+srcs/print_s.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_s.c.i
+.PHONY : srcs/print_s.c.i
 
-print_ws.s: print_ws.c.s
+srcs/print_s.s: srcs/print_s.c.s
 
-.PHONY : print_ws.s
+.PHONY : srcs/print_s.s
 
 # target to generate assembly for a file
-print_ws.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/print_ws.c.s
-.PHONY : print_ws.c.s
+srcs/print_s.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_s.c.s
+.PHONY : srcs/print_s.c.s
 
-ws_help.o: ws_help.c.o
+srcs/print_ws.o: srcs/print_ws.c.o
 
-.PHONY : ws_help.o
+.PHONY : srcs/print_ws.o
 
 # target to build an object file
-ws_help.c.o:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/ws_help.c.o
-.PHONY : ws_help.c.o
+srcs/print_ws.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_ws.c.o
+.PHONY : srcs/print_ws.c.o
 
-ws_help.i: ws_help.c.i
+srcs/print_ws.i: srcs/print_ws.c.i
 
-.PHONY : ws_help.i
+.PHONY : srcs/print_ws.i
 
 # target to preprocess a source file
-ws_help.c.i:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/ws_help.c.i
-.PHONY : ws_help.c.i
+srcs/print_ws.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_ws.c.i
+.PHONY : srcs/print_ws.c.i
 
-ws_help.s: ws_help.c.s
+srcs/print_ws.s: srcs/print_ws.c.s
 
-.PHONY : ws_help.s
+.PHONY : srcs/print_ws.s
 
 # target to generate assembly for a file
-ws_help.c.s:
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/ws_help.c.s
-.PHONY : ws_help.c.s
+srcs/print_ws.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/print_ws.c.s
+.PHONY : srcs/print_ws.c.s
+
+srcs/ws_help.o: srcs/ws_help.c.o
+
+.PHONY : srcs/ws_help.o
+
+# target to build an object file
+srcs/ws_help.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/ws_help.c.o
+.PHONY : srcs/ws_help.c.o
+
+srcs/ws_help.i: srcs/ws_help.c.i
+
+.PHONY : srcs/ws_help.i
+
+# target to preprocess a source file
+srcs/ws_help.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/ws_help.c.i
+.PHONY : srcs/ws_help.c.i
+
+srcs/ws_help.s: srcs/ws_help.c.s
+
+.PHONY : srcs/ws_help.s
+
+# target to generate assembly for a file
+srcs/ws_help.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs/ws_help.c.s
+.PHONY : srcs/ws_help.c.s
 
 # Help Target
 help:
@@ -702,66 +702,66 @@ help:
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"
-	@echo "... help.o"
-	@echo "... help.i"
-	@echo "... help.s"
-	@echo "... help_float.o"
-	@echo "... help_float.i"
-	@echo "... help_float.s"
-	@echo "... itoa_base.o"
-	@echo "... itoa_base.i"
-	@echo "... itoa_base.s"
-	@echo "... not_found.o"
-	@echo "... not_found.i"
-	@echo "... not_found.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
-	@echo "... parser_spec.o"
-	@echo "... parser_spec.i"
-	@echo "... parser_spec.s"
-	@echo "... print_ae.o"
-	@echo "... print_ae.i"
-	@echo "... print_ae.s"
-	@echo "... print_aefg.o"
-	@echo "... print_aefg.i"
-	@echo "... print_aefg.s"
-	@echo "... print_all.o"
-	@echo "... print_all.i"
-	@echo "... print_all.s"
-	@echo "... print_bxou.o"
-	@echo "... print_bxou.i"
-	@echo "... print_bxou.s"
-	@echo "... print_c.o"
-	@echo "... print_c.i"
-	@echo "... print_c.s"
-	@echo "... print_di.o"
-	@echo "... print_di.i"
-	@echo "... print_di.s"
-	@echo "... print_f.o"
-	@echo "... print_f.i"
-	@echo "... print_f.s"
-	@echo "... print_g.o"
-	@echo "... print_g.i"
-	@echo "... print_g.s"
-	@echo "... print_n.o"
-	@echo "... print_n.i"
-	@echo "... print_n.s"
-	@echo "... print_p.o"
-	@echo "... print_p.i"
-	@echo "... print_p.s"
-	@echo "... print_percent.o"
-	@echo "... print_percent.i"
-	@echo "... print_percent.s"
-	@echo "... print_s.o"
-	@echo "... print_s.i"
-	@echo "... print_s.s"
-	@echo "... print_ws.o"
-	@echo "... print_ws.i"
-	@echo "... print_ws.s"
-	@echo "... ws_help.o"
-	@echo "... ws_help.i"
-	@echo "... ws_help.s"
+	@echo "... srcs/help.o"
+	@echo "... srcs/help.i"
+	@echo "... srcs/help.s"
+	@echo "... srcs/help_float.o"
+	@echo "... srcs/help_float.i"
+	@echo "... srcs/help_float.s"
+	@echo "... srcs/itoa_base.o"
+	@echo "... srcs/itoa_base.i"
+	@echo "... srcs/itoa_base.s"
+	@echo "... srcs/not_found.o"
+	@echo "... srcs/not_found.i"
+	@echo "... srcs/not_found.s"
+	@echo "... srcs/parser.o"
+	@echo "... srcs/parser.i"
+	@echo "... srcs/parser.s"
+	@echo "... srcs/parser_spec.o"
+	@echo "... srcs/parser_spec.i"
+	@echo "... srcs/parser_spec.s"
+	@echo "... srcs/print_ae.o"
+	@echo "... srcs/print_ae.i"
+	@echo "... srcs/print_ae.s"
+	@echo "... srcs/print_aefg.o"
+	@echo "... srcs/print_aefg.i"
+	@echo "... srcs/print_aefg.s"
+	@echo "... srcs/print_all.o"
+	@echo "... srcs/print_all.i"
+	@echo "... srcs/print_all.s"
+	@echo "... srcs/print_bxou.o"
+	@echo "... srcs/print_bxou.i"
+	@echo "... srcs/print_bxou.s"
+	@echo "... srcs/print_c.o"
+	@echo "... srcs/print_c.i"
+	@echo "... srcs/print_c.s"
+	@echo "... srcs/print_di.o"
+	@echo "... srcs/print_di.i"
+	@echo "... srcs/print_di.s"
+	@echo "... srcs/print_f.o"
+	@echo "... srcs/print_f.i"
+	@echo "... srcs/print_f.s"
+	@echo "... srcs/print_g.o"
+	@echo "... srcs/print_g.i"
+	@echo "... srcs/print_g.s"
+	@echo "... srcs/print_n.o"
+	@echo "... srcs/print_n.i"
+	@echo "... srcs/print_n.s"
+	@echo "... srcs/print_p.o"
+	@echo "... srcs/print_p.i"
+	@echo "... srcs/print_p.s"
+	@echo "... srcs/print_percent.o"
+	@echo "... srcs/print_percent.i"
+	@echo "... srcs/print_percent.s"
+	@echo "... srcs/print_s.o"
+	@echo "... srcs/print_s.i"
+	@echo "... srcs/print_s.s"
+	@echo "... srcs/print_ws.o"
+	@echo "... srcs/print_ws.i"
+	@echo "... srcs/print_ws.s"
+	@echo "... srcs/ws_help.o"
+	@echo "... srcs/ws_help.i"
+	@echo "... srcs/ws_help.s"
 .PHONY : help
 
 
