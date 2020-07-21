@@ -57,8 +57,8 @@ void	print_ws(t_format *frmt)
 		print_null(frmt);
 	frmt->len = wslen(wstr, frmt);
 	if (!(frmt->fl & MINUS))
-		padding((frmt->fl & ZERO) ? "0" : " ", frmt->width - frmt->len, buffer);
+		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width - frmt->len);
 	print_wstring(wstr, frmt, frmt->len);
 	if (frmt->fl & MINUS)
-		padding(" ", frmt->width - frmt->len, buffer);
+		padding(frmt, ' ', frmt->width - frmt->len);
 }

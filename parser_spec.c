@@ -30,20 +30,24 @@ void	mode_parser(t_format *frmt)
 {
 	if (ft_memchr("di", frmt->spec, 2))
 		print_di(frmt);
-	if (ft_memchr("boux", frmt->spec, 4))
+	else if (ft_memchr("boux", frmt->spec, 4))
 		print_bxou(frmt);
-	if (ft_memchr("afge", frmt->spec, 4))
-		print_aefg;
-	if (frmt->spec == 's')
+	else if (ft_memchr("afge", frmt->spec, 4))
+		print_aefg(frmt);
+	else if (frmt->spec == 's' && frmt->fl & LONG)
+		print_ws(frmt);
+	else if (frmt->spec == 's')
 		print_s(frmt);
-	if (frmt->spec == 'c')
+	else if (frmt->spec == 'c')
 		print_c(frmt);
-	if (frmt->spec == 'n')
+	else if (frmt->spec == 'n')
 		print_n(frmt);
-	if (frmt->spec == 'm')
+	else if (frmt->spec == 'm')
 		pf_puterror(frmt);
-	if (frmt->spec == 'p')
+	else if (frmt->spec == 'p')
 		print_p(frmt);
+	else if (frmt->spec == '%')
+		print_percent(frmt)
 	else
 		cs_not_found(frmt);
 }
@@ -53,12 +57,12 @@ void	set_upper_flag(char c, t_format *format)
 	if (ft_strchr("DCOSU", c) != NULL)
 	{
 		format->fl |= LONG;
-		format->spec = c + 32;
+		format->spec += 32;
 	}
 	else if (ft_strchr("ABFEGX", c) != NULL)
 	{
 		format->fl |= UPPER;
-		format->spec = c + 32;
+		format->spec += 32;
 	}
 	else
 		format->spec = c;

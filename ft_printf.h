@@ -127,9 +127,9 @@ int32_t 		compare_fe(long double d, t_format *frmt);
  */
 void			*print_c(t_format *frmt);
 void			print_wchar(wint_t c, t_format *frmt);
-static void		oct_2(wint_t c);
-static void		oct_3(wint_t c);
-static void		oct_4(wint_t c);
+static void		oct_2(wint_t c, t_format *frmt);
+static void		oct_3(wint_t c, t_format *frmt);
+static void		oct_4(wint_t c, t_format *frmt);
 
 /*
  * print S
@@ -139,6 +139,7 @@ void 			print_s(t_format *frmt);
 /*
  * print WS
  */
+void			print_ws(t_format *frmt);
 size_t			ft_wcharlen(wint_t c, t_format *frmt);
 void			print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen);
 int64_t			wslen(wchar_t *wstr, t_format *frmt);
@@ -147,6 +148,11 @@ int64_t			wslen(wchar_t *wstr, t_format *frmt);
  * print P
  */
 void			print_p(t_format *frmt);
+
+/*
+ * print %
+ */
+int				print_percent(t_format *frmt);
 
 /*
  * print all

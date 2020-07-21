@@ -50,7 +50,7 @@ void	settings_d(intmax_t n, t_format *frmt)
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
 		padding(frmt, ' ', frmt->width - frmt->len);
 	add_sign(n, frmt, str);
-	itoa_base(frmt, ft_imaxabs(n), str, 0);
+	itoa_base(frmt, ft_imaxabs(n), str);
 	print_all(frmt, str, frmt->len);
 	if (frmt->fl & MINUS)
 		padding(frmt, ' ', frmt->width - frmt->len);

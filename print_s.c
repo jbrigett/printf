@@ -31,9 +31,9 @@ void	print_s(t_format *frmt)
 	len = ft_strlen(s);
 	frmt->len += len;
 	if (!(frmt->fl & MINUS))
-		padding((frmt->fl & ZERO) ? "0" : " ", frmt->width - len, buf);
+		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width - len);
 	ft_putstr(s);
 	if (frmt->fl & MINUS)
-		padding(" ", frmt->width - len, buffer);
+		padding(frmt, ' ', frmt->width - len);
 	free(s);
 }
