@@ -5,6 +5,8 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <ctype.h>
+#include <stdio.h>
+
 # define PLUS		(1 << 0)
 # define MINUS		(1 << 1)
 # define SHARP		(1 << 2)
@@ -34,10 +36,10 @@ typedef struct	s_format
 	const char	*str;
 	uint32_t	fl;
 	int			fd;
-	int 		len;
+	int32_t 	len;
 	int32_t		width;
 	int32_t 	prec;
-	int 		base;
+	int32_t 	base;
 	int32_t 	to_print;
 	char 		spec;
 	char		*pref;
@@ -121,11 +123,11 @@ int32_t 		compare_fe(long double d, t_format *frmt);
 /*
  * print C and lC
  */
-void			*print_c(t_format *frmt);
+void			print_c(t_format *frmt);
 void			print_wchar(wint_t c, t_format *frmt);
-void		oct_2(wint_t c, t_format *frmt);
-void		oct_3(wint_t c, t_format *frmt);
-void		oct_4(wint_t c, t_format *frmt);
+void			oct_2(wint_t c, t_format *frmt);
+void			oct_3(wint_t c, t_format *frmt);
+void			oct_4(wint_t c, t_format *frmt);
 
 /*
  * print S
@@ -136,7 +138,7 @@ void 			print_s(t_format *frmt);
  * print WS
  */
 void			print_ws(t_format *frmt);
-size_t			ft_wcharlen(wint_t c, t_format *frmt);
+size_t			ft_wcharlen(wint_t c);
 void			print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen);
 int64_t			wslen(wchar_t *wstr, t_format *frmt);
 
@@ -148,7 +150,7 @@ void			print_p(t_format *frmt);
 /*
  * print %
  */
-int				print_percent(t_format *frmt);
+void			print_percent(t_format *frmt);
 
 /*
  * print all
@@ -184,12 +186,14 @@ int				ft_strchr_index(const char *s, int c);
 /*
  * from LIBFT
  */
-size_t      	ft_strlen(const char *s);
-char	        *ft_strdup(const char *s1);
-int	            ft_atoi(const char *str);
-int	            ft_isspace(int c);
-void	        *ft_memchr(const void *s, int c, size_t n);
-char	        *ft_strchr(const char *s, int c);
-char        	*ft_strcpy(char *dst, const char *src);
-int		        ft_isdigit(int c);
+size_t			ft_strlen(const char *s);
+char			*ft_strdup(const char *s1);
+int				ft_atoi(const char *str);
+int				ft_isspace(int c);
+void 			*ft_memchr(const void *s, int c, size_t n);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strcpy(char *dst, const char *src);
+int				ft_isdigit(int c);
+char			*ft_strnew(size_t size);
+void			ft_bzero(void *s, size_t n);
 #endif

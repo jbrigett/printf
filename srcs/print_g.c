@@ -41,8 +41,6 @@ int32_t	compare_fe(long double d, t_format *frmt)
 
 void	print_g(t_format *frmt, long double d)
 {
-	int64_t	precision;
-
 	if (compare_fe(d, frmt))
 		print_ae(frmt, d);
 	else

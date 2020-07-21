@@ -46,3 +46,29 @@ char	*ft_strcpy(char *dst, const char *src)
 	dst[i] = '\0';
 	return (dst);
 }
+
+char	*ft_strnew(size_t size)
+{
+	char	*str;
+
+	if (size + 1 == 0)
+		return (NULL);
+	str = (char *)malloc((size + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char *b;
+
+	b = (unsigned char *)s;
+	while (n)
+	{
+		*b = 0;
+		b++;
+		n--;
+	}
+}

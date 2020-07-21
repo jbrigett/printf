@@ -16,8 +16,13 @@ void	flag_and_width(char **str, t_format *frmt)
 {
 	int n;
 
-	while ((n = ft_strchr_index("+-#0 '", **str)) >= 0 && ++(*str))
+	++(*str);
+	n = ft_strchr_index("+-#0 ", **str);
+	while (n >= 0 && ++(*str))
+	{
 		frmt->fl |= (1 << n);
+		n = ft_strchr_index("+-#0 ", **str);
+	}
 	frmt->fl &= (frmt->fl & PLUS) ? ~SPACE : 0;
 	if (**str == '*')
 	{
@@ -55,6 +60,8 @@ void	precision_parser(char **str, t_format *frmt)
 
 void	length_parser(char **str, t_format *frmt)
 {
+	if (!(ft_memchr("hljzL", **str, 5)))
+		return ;
 	if (**str == 'h')
 		frmt->fl |= (**str == 'h' && ++(*str)) ? SSHORT : SHORT;
 	else if (**str == 'l')

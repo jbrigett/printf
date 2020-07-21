@@ -16,11 +16,11 @@ void	base_parser(t_format *frmt)
 {
 	if (ft_memchr("b", frmt->spec, 1))
 		frmt->base = 2;
-	if (ft_memchr("o", frmt->spec, 1))
+	else if (ft_memchr("o", frmt->spec, 1))
 		frmt->base = 8;
-	if (ft_memchr("diufge", frmt->spec, 6))
+	else if (ft_memchr("diufge", frmt->spec, 6))
 		frmt->base = 10;
-	if (ft_memchr("xa", frmt->spec, 2))
+	else if (ft_memchr("xa", frmt->spec, 2))
 		frmt->base = 16;
 	else
 		frmt->base = 0;
@@ -55,12 +55,12 @@ void	set_upper_flag(char c, t_format *format)
 	if (ft_strchr("DCOSU", c) != NULL)
 	{
 		format->fl |= LONG;
-		format->spec += 32;
+		format->spec = c + 32;
 	}
 	else if (ft_strchr("ABFEGX", c) != NULL)
 	{
 		format->fl |= UPPER;
-		format->spec += 32;
+		format->spec = c + 32;
 	}
 	else
 		format->spec = c;

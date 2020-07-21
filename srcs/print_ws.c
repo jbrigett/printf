@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-size_t	ft_wcharlen(wint_t c, t_format *frmt)
+size_t	ft_wcharlen(wint_t c)
 {
 	if (c <= 0x7F)
 		return (1);
@@ -22,11 +22,12 @@ size_t	ft_wcharlen(wint_t c, t_format *frmt)
 		return (3);
 	if (c >= 0x10000 && c <= 0x1FFFFF)
 		return (4);
+	return (4); //????????????????????????/
 }
 
 void	print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen)
 {
-	while ((strlen -= ft_wcharlen(*wstr, frmt)) >= 0)
+	while ((strlen -= ft_wcharlen(*wstr)) >= 0)
 		print_wchar(*wstr++, frmt);
 }
 
@@ -39,10 +40,10 @@ int64_t	wslen(wchar_t *wstr, t_format *frmt)
 	len = frmt->prec;
 	while (*wstr != L'\0')
 	{
-		if (frmt->fl & PRECISION && ft_wcharlen(*wstr, frmt) > (size_t)len)
+		if (frmt->fl & PRECISION && ft_wcharlen(*wstr) > (size_t)len)
 			break ;
-		strlen += ft_wcharlen(*wstr, frmt);
-		len -= ft_wcharlen(*wstr, frmt);
+		strlen += ft_wcharlen(*wstr);
+		len -= ft_wcharlen(*wstr);
 		++wstr;
 	}
 	len = strlen;

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
 void	ft_strup(char *str)
 {
 	while (*str)

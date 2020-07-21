@@ -91,7 +91,7 @@ void			print_wchar(wint_t c, t_format *frmt)
 	}
 }
 
-void			*print_c(t_format *frmt)
+void			print_c(t_format *frmt)
 {
 	wint_t c;
 
@@ -100,7 +100,7 @@ void			*print_c(t_format *frmt)
 	else
 		c = (char)va_arg(frmt->ap, int);
 	c = (wint_t)c;
-	frmt->width = (frmt->width > 0) ? frmt->width - ft_wcharlen(c, frmt) : 0;
+	frmt->width = (frmt->width > 0) ? frmt->width - ft_wcharlen(c) : 0;
 	if (!(frmt->fl & MINUS) && frmt->width > 0)
 		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width - 1);
 	print_wchar(c, frmt);

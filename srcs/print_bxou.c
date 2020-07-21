@@ -43,7 +43,7 @@ void	set_width_base(t_format *frmt, uintmax_t n)
 	if (frmt->base == 8 && frmt->fl & SHARP && !n &&
 			frmt->fl & PRECISION && frmt->prec <= 0)
 		++frmt->len;
-	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO))
+	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO)) //zero ?
 		frmt->width -= 2;
 }
 
@@ -57,9 +57,10 @@ void	settings_bxou(uintmax_t n, t_format *frmt)
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
 		padding(frmt, ' ', frmt->width - frmt->len);
 	print_prefix(n, frmt);
-	if (!(frmt->fl & MINUS) && frmt->fl & ZERO && frmt->fl & PRECISION)
+	if (!(frmt->fl & MINUS) && frmt->fl & ZERO && !(frmt->fl & PRECISION))
 		padding(frmt, '0', frmt->width - frmt->len);
-	itoa_base(frmt, n, str);
+	if (!(n == 0 && frmt->prec <= 0) || !(frmt->base == 8 && (frmt->fl & SHARP)))
+		itoa_base(frmt, n, str);
 	print_all(frmt, str, frmt->len);
 	if (frmt->fl & MINUS)
 		padding(frmt, ' ', frmt->width - frmt->len);

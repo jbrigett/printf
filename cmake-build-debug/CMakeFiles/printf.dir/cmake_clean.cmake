@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/printf.dir/ft_printf.c.o"
+  "CMakeFiles/printf.dir/srcs/ft_printf.c.o"
   "CMakeFiles/printf.dir/srcs/help.c.o"
   "CMakeFiles/printf.dir/srcs/help_float.c.o"
   "CMakeFiles/printf.dir/srcs/itoa_base.c.o"

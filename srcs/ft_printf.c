@@ -31,6 +31,7 @@ int	ft_printf(const char *format, ...)
 			else
 			{
 				write(1, str, 1);
+				str++;
 				frmt->to_print++;
 			}
 		}

@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include "./srcs/ft_printf.h"
+
+int main()
+{
+	ft_printf("%d %s", 4, "asd");
+	return(0);
+}

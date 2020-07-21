@@ -8,143 +8,143 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/jbrigett/printf/cmake-build-debug"/>
+				<Option working_dir="/Users/mort/printf21/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/jbrigett/printf/cmake-build-debug"/>
+				<Option working_dir="/Users/mort/printf21/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/jbrigett/printf/cmake-build-debug"/>
+				<Option working_dir="/Users/mort/printf21/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="printf">
-				<Option output="/Users/jbrigett/printf/cmake-build-debug/libprintf.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/jbrigett/printf/cmake-build-debug"/>
+				<Option output="/Users/mort/printf21/cmake-build-debug/libprintf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mort/printf21/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="printf/fast">
-				<Option output="/Users/jbrigett/printf/cmake-build-debug/libprintf.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/jbrigett/printf/cmake-build-debug"/>
+				<Option output="/Users/mort/printf21/cmake-build-debug/libprintf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mort/printf21/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jbrigett/printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mort/printf21/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/jbrigett/printf/ft_printf.c">
+		<Unit filename="/Users/mort/printf21/includes/ft_printf.h">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/includes/ft_printf.h">
+		<Unit filename="/Users/mort/printf21/srcs/ft_printf.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/help.c">
+		<Unit filename="/Users/mort/printf21/srcs/help.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/help_float.c">
+		<Unit filename="/Users/mort/printf21/srcs/help_float.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/itoa_base.c">
+		<Unit filename="/Users/mort/printf21/srcs/itoa_base.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/not_found.c">
+		<Unit filename="/Users/mort/printf21/srcs/not_found.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/parser.c">
+		<Unit filename="/Users/mort/printf21/srcs/parser.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/parser_spec.c">
+		<Unit filename="/Users/mort/printf21/srcs/parser_spec.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_ae.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_ae.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_aefg.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_aefg.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_all.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_all.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_bxou.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_bxou.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_c.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_c.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_di.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_di.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_f.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_f.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_g.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_g.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_n.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_n.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_p.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_p.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_percent.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_percent.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_s.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_s.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/print_ws.c">
+		<Unit filename="/Users/mort/printf21/srcs/print_ws.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/srcs/ws_help.c">
+		<Unit filename="/Users/mort/printf21/srcs/ws_help.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/jbrigett/printf/CMakeLists.txt">
+		<Unit filename="/Users/mort/printf21/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
