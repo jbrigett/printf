@@ -75,7 +75,6 @@ void			set_upper_flag(char c, t_format *format);
  */
 void			itoa_base(t_format *frmt, uintmax_t n, char *str);
 void			print_itoa_base(uintmax_t n, t_format *frmt);
-void			ft_strup(char *str);
 
 /*
  * printing with spec D, I

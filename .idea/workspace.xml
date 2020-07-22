@@ -31,50 +31,33 @@
   <component name="ChangeListManager">
     <list default="true" id="ad40e35b-a1be-4f7f-b747-1c489bb4860f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/printf.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/printf.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/libft.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/libft.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/libft2.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/libft2.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser_spec.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser_spec.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_ae.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_ae.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_aefg.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_aefg.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_all.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_all.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_bxou.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_bxou.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_printf.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/itoa_base.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/itoa_base.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/libft2.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/libft2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/parser_spec.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/parser_spec.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_all.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_all.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/help.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/help_float.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/itoa_base.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/libft.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/libft2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/not_found.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/parser.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/parser_spec.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_ae.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_aefg.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_all.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_bxou.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_di.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_f.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_g.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_n.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_p.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_percent.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_s.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_ws.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ws_help.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/print_bxou.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_bxou.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_c.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_c.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_di.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_di.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_f.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_f.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_g.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_g.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_percent.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_percent.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_s.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_s.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_ws.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_ws.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +128,7 @@
       <workItem from="1594981665335" duration="22204000" />
       <workItem from="1595332436699" duration="753000" />
       <workItem from="1595341267625" duration="2438000" />
-      <workItem from="1595351050745" duration="12864000" />
+      <workItem from="1595351050745" duration="14547000" />
     </task>
     <servers />
   </component>

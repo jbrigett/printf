@@ -17,13 +17,9 @@ void	flag_and_width(char **str, t_format *frmt)
 	int n;
 
 	++(*str);
-	n = ft_strchr_index("+-#0 ", **str);
-	while (n >= 0 && ++(*str))
-	{
+	while ((n = ft_strchr_index("+-#0 ", **str)) >= 0 && ++(*str))
 		frmt->fl |= (1 << n);
-		n = ft_strchr_index("+-#0 ", **str);
-	}
-	frmt->fl &= (frmt->fl & PLUS) ? ~SPACE : 0;
+	(frmt->fl & PLUS) ? frmt->fl &= ~SPACE : 0;
 	if (**str == '*')
 	{
 		n = (int)va_arg(frmt->ap, int);

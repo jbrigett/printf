@@ -11,14 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-void	ft_strup(char *str)
-{
-	while (*str)
-	{
-		if (*str >= 97 && *str <= 122)
-			*str -= 32;
-	}
-}
 
 void	itoa_base(t_format *frmt, uintmax_t n, char *str)
 {
@@ -26,7 +18,7 @@ void	itoa_base(t_format *frmt, uintmax_t n, char *str)
 	size_t	tmp;
 
 	print = "0123456789abcdef";
-	frmt->fl & UPPER ? ft_strup(print) : 0;
+	(frmt->fl & UPPER) ? print = "0123456789ABCDEF" : 0;
 	tmp = frmt->len;
 	while (tmp--)
 	{
