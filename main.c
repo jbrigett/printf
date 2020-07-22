@@ -4,8 +4,8 @@
 int main()
 {
 
-	ft_printf(" %hd ", 44);
-	printf("%hd\n", 44);
+	ft_printf(" %hhd ", 44);
+	printf("%hhd\n", 44);
 /*	ft_printf("    11   %#5o ", 44);
 	printf("%#5o", 44);*/
 
