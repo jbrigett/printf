@@ -14,29 +14,28 @@
 
 int32_t	compare_fe(long double d, t_format *frmt)
 {
-	long double	fraction;
-	int64_t		exp;
-	size_t		len;
 	int64_t		tmp;
-	uint64_t 	integer;
+	t_double    *doub;
 
-	set_exp(&integer, &fraction, frmt, &exp, d);
-	len = length_base((uintmax_t)ft_fabsl(d), 10);
-	if ((intmax_t)len > frmt->prec || exp <= -4)
+	if (!(doub = (t_double*)malloc(sizeof(t_double))))
+		return (-1);
+	set_exp(doub, frmt);
+	frmt->len = length_base((uintmax_t)ft_fabsl(d), 10);
+	if ((intmax_t)frmt->len > frmt->prec || doub->exp <= -4)
 	{
-		frmt->prec -= (intmax_t)len;
+		frmt->prec -= (intmax_t)frmt->len;
 		return (1);
 	}
-	frmt->prec += (exp < 0) ? ft_imaxabs(exp) : 0;
-	tmp = len;
-	fraction = d - (intmax_t)d;
-	while (fraction < 0)
+	frmt->prec += (doub->exp < 0) ? ft_imaxabs(doub->exp) : 0;
+	tmp = frmt->len;
+	doub->fraction = d - (intmax_t)d;
+	while (doub->fraction < 0)
 	{
-		fraction *= 10;
-		fraction -= (int64_t)fraction;
+		doub->fraction *= 10;
+		doub->fraction -= (int64_t)doub->fraction;
 		++tmp;
 	}
-	frmt->prec = (tmp < frmt->prec) ? tmp : frmt->prec - (intmax_t)len;
+	frmt->prec = (tmp < frmt->prec) ? tmp : frmt->prec - (intmax_t)frmt->len;
 	return (0);
 }
 

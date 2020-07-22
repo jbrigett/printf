@@ -69,7 +69,7 @@ void		print_fraction(long double fraction, t_format *frmt)
 	}
 }
 
-//БУКВЫ ГДЕ-ТО В ДИ И ЕЩЕ AE
+//БУКВЫ ГДЕ-ТО В ДИ
 void		print_f(t_format *frmt, long double d)
 {
 	uint64_t	integer;
