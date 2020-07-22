@@ -61,6 +61,7 @@ void	print_ae(t_format *frmt, long double d)
 
 	if (!(doub = (t_double*)malloc(sizeof(t_double))))
 		return ;
+	doub->n = d;
 	set_exp(doub, frmt);
 	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
 	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
@@ -69,8 +70,8 @@ void	print_ae(t_format *frmt, long double d)
 	print_sign(d, frmt);
 	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction) : doub->integer;
 	print_itoa_base(n, frmt);
-//	if (frmt->fl & SHARP || frmt->prec > 0)
-//		print_fraction(doub->fraction, frmt);
+	if (frmt->fl & SHARP || frmt->prec > 0)
+		print_fraction(doub->fraction, frmt);
 	print_exp(doub->exp, frmt);
 	if (frmt->fl & MINUS)
 		padding(frmt, ' ', frmt->width);

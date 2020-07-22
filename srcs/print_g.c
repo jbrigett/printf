@@ -19,6 +19,7 @@ int32_t	compare_fe(long double d, t_format *frmt)
 
 	if (!(doub = (t_double*)malloc(sizeof(t_double))))
 		return (-1);
+	doub->n = d;
 	set_exp(doub, frmt);
 	frmt->len = length_base((uintmax_t)ft_fabsl(d), 10);
 	if ((intmax_t)frmt->len > frmt->prec || doub->exp <= -4)

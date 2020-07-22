@@ -57,11 +57,16 @@ void	precision_parser(char **str, t_format *frmt)
 void	length_parser(char **str, t_format *frmt)
 {
 	if (!(ft_memchr("hljzL", **str, 5)))
-		return ;
-	if (**str == 'h')
-		frmt->fl |= (**str == 'h' && ++(*str)) ? SSHORT : SHORT;
-	else if (**str == 'l')
-		frmt->fl |= (**str == 'l' && ++(*str)) ? LLONG : LONG;
+		return;
+	if (ft_memchr("hl", **str, 2))
+	{
+		printf("  -%c-  ", **str);
+		if (**str == 'h')
+			frmt->fl |= (++(*str) && **str == 'h') ? SSHORT : SHORT;
+		else if (**str == 'l')
+			frmt->fl |= (++(*str) && **str == 'l') ? LLONG : LONG;
+		printf("  -%c-  ", **str);
+	}
 	else if (**str == 'j')
 		frmt->fl |= INTMAX;
 	else if (**str == 'z')
