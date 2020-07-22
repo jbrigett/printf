@@ -10,8 +10,8 @@ int main()
 	printf("%#5o", 44);*/
 
 
-	ft_printf("%a ", 44.1);
-	printf("%a", 44.1);
+	ft_printf("%e ", 44.1);
+	printf("%f", 44.1);
 	//printf("\n%5d", 44.434);
 	return(0);
 }

@@ -18,8 +18,9 @@ int32_t	compare_fe(long double d, t_format *frmt)
 	int64_t		exp;
 	size_t		len;
 	int64_t		tmp;
+	uint64_t 	integer;
 
-	set_exp(frmt, &exp, d);
+	set_exp(&integer, &fraction, frmt, &exp, d);
 	len = length_base((uintmax_t)ft_fabsl(d), 10);
 	if ((intmax_t)len > frmt->prec || exp <= -4)
 	{
