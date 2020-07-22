@@ -19,6 +19,7 @@ intmax_t	ft_max(intmax_t a, intmax_t b)
 
 void		init_format(int fd, t_format *format, const char *str)
 {
+	format->width = 0;
 	format->len = 0;
 	format->fd = fd;
 	format->prec = 1;
@@ -26,11 +27,13 @@ void		init_format(int fd, t_format *format, const char *str)
 	format->spec = '\0';
 	format->base = 0;
 	format->str = str;
+	format->fl = 0;
 }
 
 void		reinit_format(t_format *format)
 {
-	format->width = -1;
+	format->fl = 0;
+	format->width = 0;
 	format->prec = 1;
 	format->spec = '\0';
 	format->base = 0;

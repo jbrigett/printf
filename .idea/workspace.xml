@@ -32,32 +32,18 @@
     <list default="true" id="ad40e35b-a1be-4f7f-b747-1c489bb4860f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/help.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/help_float.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/itoa_base.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/libft.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/libft2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/not_found.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser_spec.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_ae.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_aefg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_all.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_bxou.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_di.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_f.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_g.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_n.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_p.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_percent.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_s.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_ws.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/ws_help.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_bxou.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_bxou.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/help.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/help.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/help_float.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/help_float.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_ae.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_ae.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/print_aefg.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_aefg.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/help.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/help.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/help_float.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/help_float.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/print_ae.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_ae.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/print_aefg.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_aefg.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/print_f.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_f.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +114,7 @@
       <workItem from="1594981665335" duration="22204000" />
       <workItem from="1595332436699" duration="753000" />
       <workItem from="1595341267625" duration="2438000" />
-      <workItem from="1595351050745" duration="14547000" />
+      <workItem from="1595351050745" duration="22158000" />
     </task>
     <servers />
   </component>

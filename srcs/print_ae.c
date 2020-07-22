@@ -41,12 +41,36 @@ void	print_exp(int64_t exp, t_format *frmt)
 	print_itoa_base(exp, frmt);
 }
 
-void	set_width_ae(long double d, uint64_t integer, t_format *frmt)
+void	set_width_ae(uint64_t integer, t_format *frmt)
 {
+	frmt->width -= length_base(integer, frmt->base);
+	frmt->width	-= ft_strlen(frmt->pref);
+	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
+	printf(" %llu  ", integer);
+
+}
+/*
+void		print_f(t_format *frmt, long double d)
+{
+	uint64_t	integer;
+	uintmax_t	n;
+	long double	fraction;
+
+	if (check_spec_val(frmt, d))
+		return ;
+	integer = (uint64_t)ft_fabsl(d);
+	fraction = ft_fabsl(d) - integer;
 	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
 	frmt->width -= (length_base(integer, frmt->base) + ft_strlen(frmt->pref));
 	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
+	print_sign(d, frmt);
+	n = (frmt->prec == 0) ? ft_imaxabs(ft_roundl(d)) : integer;
+	print_itoa_base(n, frmt);
+	if (frmt->fl & SHARP || frmt->prec > 0)
+		print_fraction(fraction, frmt);
+	if (frmt->fl & MINUS)
+		padding(frmt, ' ', frmt->width);
 }
 
 void	print_ae(t_format *frmt, long double d)
@@ -56,11 +80,13 @@ void	print_ae(t_format *frmt, long double d)
 	uintmax_t	n;
 	long double	fraction;
 
-	integer = (uint64_t)d;
-	fraction = d - integer;
+	integer = (uint64_t)ft_fabsl(d);
+	fraction = ft_fabsl(d) - integer;
 	set_exp(frmt, &exp, d);
 	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
-	set_width_ae(d, integer, frmt);
+	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
+		frmt->width -= 1;
+	set_width_ae(integer, frmt);
 	print_sign(d, frmt);
 	n = (frmt->prec == 0) ? ft_roundl(integer + fraction) : integer;
 	print_itoa_base(n, frmt);
@@ -70,4 +96,23 @@ void	print_ae(t_format *frmt, long double d)
 	print_exp(exp, frmt);
 	if (frmt->fl & MINUS)
 		padding(frmt, ' ', frmt->width);
+}
+
+ */
+
+void	print_ae(t_format *frmt, long double d)
+{
+	uint64_t	integer;
+	long double	fraction;
+	int64_t		exp;
+
+	integer = (uint64_t)d;
+	fraction = d - integer;
+	frmt->base = 1;
+	set_exp(frmt, &exp, d);
+	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
+	//set_width_ae(d, integer, frmt);
+	print_sign(d, frmt);
+//	if (d < 0)
+	printf("%Lf  %llu   %lld", fraction, integer, exp);
 }

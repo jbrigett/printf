@@ -69,6 +69,7 @@ void		print_fraction(long double fraction, t_format *frmt)
 	}
 }
 
+//БУКВЫ ГДЕ-ТО В ДИ И ЕЩЕ AE
 void		print_f(t_format *frmt, long double d)
 {
 	uint64_t	integer;
@@ -79,7 +80,6 @@ void		print_f(t_format *frmt, long double d)
 		return ;
 	integer = (uint64_t)ft_fabsl(d);
 	fraction = ft_fabsl(d) - integer;
-	//printf("%ld %ld \n", integer, fraction);
 	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
 	frmt->width -= (length_base(integer, frmt->base) + ft_strlen(frmt->pref));

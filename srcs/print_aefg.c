@@ -20,7 +20,8 @@ void	print_aefg(t_format *frmt)
 		n = (long double)va_arg(frmt->ap, long double);
 	else
 		n = (double)va_arg(frmt->ap, double);
-	!(frmt->fl & PRECISION) ? frmt->prec = 6 : 0;
+	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
+	frmt->pref = "";
 	if (frmt->spec == 'a')
 	{
 		frmt->pref = (frmt->fl & UPPER) ? "0X" : "0x";

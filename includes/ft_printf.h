@@ -111,7 +111,7 @@ void			print_fraction(long double fraction, t_format *frmt);
 void			print_ae(t_format *frmt, long double d);
 void			set_exp(t_format *frmt, int64_t *exp, long double n);
 void			print_exp(int64_t exp, t_format *frmt);
-void			set_width_ae(long double d, uint64_t integer, t_format *frmt);
+void			set_width_ae(uint64_t integer, t_format *frmt);
 
 /*
  * print G

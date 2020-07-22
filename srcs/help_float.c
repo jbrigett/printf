@@ -14,20 +14,25 @@
 
 long double	ft_fabsl(long double d)
 {
-	uintmax_t	res;
+	/*uintmax_t	res;
 
 	res = *(uintmax_t*)&d;
 	res &= LD_MASK_LONG;
-	return (*(long double*)&res);
+	return (*(long double*)&res); */
+
+	return ((d < 0) ? -d : d);
 }
 
-uintmax_t	ft_imaxabs(intmax_t n)
+uintmax_t	ft_imaxabs(intmax_t d)
 {
-	intmax_t mask;
+	/*intmax_t mask;
 
 	mask = (n >> (sizeof(n) * 8 - 1));
 	n = (uintmax_t)((n + mask) ^ mask);
-	return (n);
+	return (n);*/
+
+	return ((d < 0) ? -d : d);
+
 }
 
 intmax_t	ft_roundl(long double d)
