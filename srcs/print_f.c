@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:54:40 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:18:59 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:27:34 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void		print_fraction(long double fraction, t_format *frmt)
 	}
 }
 
-//БУКВЫ ГДЕ-ТО В ДИ
 void		print_f(t_format *frmt, long double d)
 {
 	uint64_t	integer;

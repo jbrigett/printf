@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:53:50 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:06:56 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:26:33 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		oct_2(wint_t c, t_format *frmt)
 	frmt->to_print += 2;
 }
 
-void			print_wchar(wint_t c, t_format *frmt)
+void		print_wchar(wint_t c, t_format *frmt)
 {
 	if (c <= 0x7F)
 	{
@@ -91,7 +91,7 @@ void			print_wchar(wint_t c, t_format *frmt)
 	}
 }
 
-void			print_c(t_format *frmt)
+void		print_c(t_format *frmt)
 {
 	wint_t c;
 

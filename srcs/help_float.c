@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:50:44 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:00:50 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:23:14 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,12 @@
 
 long double	ft_fabsl(long double d)
 {
-	/*uintmax_t	res;
-
-	res = *(uintmax_t*)&d;
-	res &= LD_MASK_LONG;
-	return (*(long double*)&res); */
-
 	return ((d < 0) ? -d : d);
 }
 
 uintmax_t	ft_imaxabs(intmax_t d)
 {
-	/*intmax_t mask;
-
-	mask = (n >> (sizeof(n) * 8 - 1));
-	n = (uintmax_t)((n + mask) ^ mask);
-	return (n);*/
-
 	return ((d < 0) ? -d : d);
-
 }
 
 intmax_t	ft_roundl(long double d)

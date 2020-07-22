@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:55:22 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:22:34 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:27:03 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_wcharlen(wint_t c)
 		return (3);
 	if (c >= 0x10000 && c <= 0x1FFFFF)
 		return (4);
-	return (4); //????????????????????????/
+	return (4);
 }
 
 void	print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen)

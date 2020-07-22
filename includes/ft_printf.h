@@ -1,11 +1,23 @@
-#ifndef LIBRARY_H
-# define LIBRARY_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/22 18:31:04 by jbrigett          #+#    #+#             */
+/*   Updated: 2020/07/22 18:37:26 by jbrigett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include <ctype.h>
-#include <stdio.h>
+# include <stdio.h>
 
 # define PLUS		(1 << 0)
 # define MINUS		(1 << 1)
@@ -36,23 +48,23 @@ typedef struct	s_format
 	const char	*str;
 	uint32_t	fl;
 	int			fd;
-	int32_t 	len;
+	int32_t		len;
 	int32_t		width;
-	int32_t 	prec;
-	int32_t 	base;
-	int32_t 	to_print;
-	char 		spec;
+	int32_t		prec;
+	int32_t		base;
+	int32_t		to_print;
+	char		spec;
 	char		*pref;
-	va_list 	ap;
+	va_list		ap;
 }				t_format;
 
-typedef struct  s_double
+typedef struct	s_double
 {
-	uint64_t    integer;
-	int64_t     exp;
-	long double fraction;
-	long double n;
-}               t_double;
+	uint64_t	integer;
+	int64_t		exp;
+	long double	fraction;
+	long double	n;
+}				t_double;
 
 /*
 ** main function
@@ -61,14 +73,14 @@ int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
 
 /*
- * print CS NOT FOUND
- */
+** print CS NOT FOUND
+*/
 void			cs_not_found(t_format *frmt);
 void			print_n(t_format *format);
 
 /*
- * Parsing each argument's format string
- */
+** Parsing each argument's format string
+*/
 void			parser(char **str, t_format *frmt);
 void			flag_and_width(char **str, t_format *frmt);
 void			precision_parser(char **str, t_format *frmt);
@@ -79,57 +91,57 @@ void			mode_parser(t_format *frmt);
 void			set_upper_flag(char c, t_format *format);
 
 /*
- * ITOA W/ BASE
- */
+** ITOA W/ BASE
+*/
 void			itoa_base(t_format *frmt, uintmax_t n, char *str);
 void			print_itoa_base(uintmax_t n, t_format *frmt);
 
 /*
- * printing with spec D, I
- */
+** printing with spec D, I
+*/
 void			print_di(t_format *frmt);
 void			add_sign(intmax_t n, t_format *frmt, char *str);
 void			set_width(intmax_t n, t_format *frmt);
 void			settings_d(intmax_t n, t_format *frmt);
 
 /*
- * printhing spec B, X, O, U
- */
+** printhing spec B, X, O, U
+*/
 void			print_bxou(t_format *frmt);
 void			settings_bxou(uintmax_t n, t_format *frmt);
 void			set_width_base(t_format *frmt, uintmax_t n);
 void			print_prefix(uintmax_t n, t_format *frmt);
 
 /*
- * prining floats: A, F, G, E
- */
+** prining floats: A, F, G, E
+*/
 void			print_aefg(t_format *frmt);
 
 /*
- * print F
- */
-void			print_f(t_format *frmt,  long double d);
+** print F
+*/
+void			print_f(t_format *frmt, long double d);
 int				check_spec_val(t_format *frmt, long double n);
 void			print_sign(long double d, t_format *frmt);
 void			print_fraction(long double fraction, t_format *frmt);
 
 /*
- * print A, E
- */
+** print A, E
+*/
 void			print_ae(t_format *frmt, long double d);
 void			set_exp(t_double *doub, t_format *frmt);
 void			print_exp(int64_t exp, t_format *frmt);
 void			set_width_ae(uint64_t integer, t_format *frmt);
 
 /*
- * print G
- */
+** print G
+*/
 void			print_g(t_format *frmt, long double d);
-int32_t 		compare_fe(long double d, t_format *frmt);
+int32_t			compare_fe(long double d, t_format *frmt);
 
 /*
- * print C and lC
- */
+** print C and lC
+*/
 void			print_c(t_format *frmt);
 void			print_wchar(wint_t c, t_format *frmt);
 void			oct_2(wint_t c, t_format *frmt);
@@ -137,47 +149,47 @@ void			oct_3(wint_t c, t_format *frmt);
 void			oct_4(wint_t c, t_format *frmt);
 
 /*
- * print S
- */
-void 			print_s(t_format *frmt);
+** print S
+*/
+void			print_s(t_format *frmt);
 
 /*
- * print WS
- */
+** print WS
+*/
 void			print_ws(t_format *frmt);
 size_t			ft_wcharlen(wint_t c);
 void			print_wstring(wchar_t *wstr, t_format *frmt, int64_t strlen);
 int64_t			wslen(wchar_t *wstr, t_format *frmt);
 
 /*
- * print P
- */
+** print P
+*/
 void			print_p(t_format *frmt);
 
 /*
- * print %
- */
+** print %
+*/
 void			print_percent(t_format *frmt);
 
 /*
- * print all
- */
+** print all
+*/
 void			print_all(t_format *frmt, char *str, int len);
 void			padding(t_format *frmt, char c, int len);
 
 /*
- * HELP FOR WSTRING
- */
-void            print_null(t_format *frmt);
-wchar_t         *wstrdup(wchar_t *str);
-wchar_t         *wstrndup(wchar_t *s1, size_t n);
+** HELP FOR WSTRING
+*/
+void			print_null(t_format *frmt);
+wchar_t			*wstrdup(wchar_t *str);
+wchar_t			*wstrndup(wchar_t *s1, size_t n);
 char			*ft_strndup(const char *s1, size_t n);
 
 /*
- * HELP FUNCTIONS FOR FLOAT
- */
-long double 	ft_fabsl(long double d);
-intmax_t 		ft_roundl(long double d);
+** HELP FUNCTIONS FOR FLOAT
+*/
+long double		ft_fabsl(long double d);
+intmax_t		ft_roundl(long double d);
 uintmax_t		ft_imaxabs(intmax_t n);
 
 /*
@@ -186,18 +198,18 @@ uintmax_t		ft_imaxabs(intmax_t n);
 void			init_format(int fd, t_format *format, const char *str);
 void			reinit_format(t_format *format);
 int8_t			ft_isupper(char c);
-intmax_t 		ft_max(intmax_t a, intmax_t b);
+intmax_t		ft_max(intmax_t a, intmax_t b);
 size_t			length_base(uintmax_t n, int8_t base);
 int				ft_strchr_index(const char *s, int c);
 
 /*
- * from LIBFT
- */
+** from LIBFT
+*/
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
 int				ft_atoi(const char *str);
 int				ft_isspace(int c);
-void 			*ft_memchr(const void *s, int c, size_t n);
+void			*ft_memchr(const void *s, int c, size_t n);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strcpy(char *dst, const char *src);
 int				ft_isdigit(int c);

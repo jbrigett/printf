@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:54:32 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:16:11 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:24:25 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ void	print_di(t_format *frmt)
 		n = (size_t)va_arg(frmt->ap, size_t);
 	else if (frmt->fl & INTMAX)
 		n = (intmax_t)va_arg(frmt->ap, intmax_t);
-//	else if (frmt->fl & PTRDIFF)
-//		n = (ptrdiff_t)va_arg(*app, ptrdiff_t);
 	else
 		n = (int)va_arg(frmt->ap, int);
 	(frmt->fl & ZERO) ? frmt->prec = frmt->width : 0;

@@ -4,15 +4,15 @@
 int main()
 {
 
-	ft_printf(" %hhd ", 44);
-	printf("%hhd\n", 44);
+	// %hh d - пропуск ненужных символов
+//	ft_printf(" %hh d ", 44);
+//	printf("%hh d\n", 44);
 /*	ft_printf("    11   %#5o ", 44);
 	printf("%#5o", 44);*/
 
 
-	/*ft_printf("%g ",44.1);
-	printf("%g", 44.1);
+	ft_printf("%19a ",44.1);
+	printf("%19a", 44.1);
 	//printf("\n%5d", 44.434);
-	 */
 	return(0);
 }

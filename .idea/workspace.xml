@@ -30,17 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad40e35b-a1be-4f7f-b747-1c489bb4860f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_ae.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_ae.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_g.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_g.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_ae.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_ae.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_g.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_g.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +91,7 @@
       <workItem from="1595332436699" duration="753000" />
       <workItem from="1595341267625" duration="2438000" />
       <workItem from="1595351050745" duration="23914000" />
-      <workItem from="1595419039539" duration="7024000" />
+      <workItem from="1595419039539" duration="7948000" />
     </task>
     <servers />
   </component>

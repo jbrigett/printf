@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:53:14 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:04:46 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:29:50 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	set_exp(t_double *doub, t_format *frmt)
 	if (doub->n != 0)
 	{
 		if (doub->n < 1)
-			while (doub->n < 1) {
+			while (doub->n < 1)
+			{
 				doub->exp -= 1;
 				doub->n *= (frmt->base == 10) ? frmt->base : 2;
 			}
@@ -50,14 +51,14 @@ void	print_exp(int64_t exp, t_format *frmt)
 void	set_width_ae(uint64_t integer, t_format *frmt)
 {
 	frmt->width -= length_base(integer, frmt->base);
-	frmt->width	-= ft_strlen(frmt->pref);
+	frmt->width -= ft_strlen(frmt->pref);
 	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
 }
 
 void	print_ae(t_format *frmt, long double d)
 {
 	uintmax_t	n;
-	t_double    *doub;
+	t_double	*doub;
 
 	if (!(doub = (t_double*)malloc(sizeof(t_double))))
 		return ;
@@ -68,7 +69,8 @@ void	print_ae(t_format *frmt, long double d)
 		frmt->width -= 1;
 	set_width_ae(doub->integer, frmt);
 	print_sign(d, frmt);
-	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction) : doub->integer;
+	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction)
+		: doub->integer;
 	print_itoa_base(n, frmt);
 	if (frmt->fl & SHARP || frmt->prec > 0)
 		print_fraction(doub->fraction, frmt);

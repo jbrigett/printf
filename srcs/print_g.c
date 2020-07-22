@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:54:50 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:20:15 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:30:04 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int32_t	compare_fe(long double d, t_format *frmt)
 {
 	int64_t		tmp;
-	t_double    *doub;
+	t_double	*doub;
 
 	if (!(doub = (t_double*)malloc(sizeof(t_double))))
 		return (-1);

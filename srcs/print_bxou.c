@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:53:33 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/16 19:11:47 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/07/22 18:29:20 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	set_width_base(t_format *frmt, uintmax_t n)
 	if (frmt->base == 8 && frmt->fl & SHARP && !n &&
 			frmt->fl & PRECISION && frmt->prec <= 0)
 		++frmt->len;
-	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO)) //zero ?
+	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO))
 		frmt->width -= 2;
 }
 
@@ -59,7 +59,8 @@ void	settings_bxou(uintmax_t n, t_format *frmt)
 	print_prefix(n, frmt);
 	if (!(frmt->fl & MINUS) && frmt->fl & ZERO && !(frmt->fl & PRECISION))
 		padding(frmt, '0', frmt->width - frmt->len);
-	if (!(n == 0 && frmt->prec <= 0) || !(frmt->base == 8 && (frmt->fl & SHARP)))
+	if (!(n == 0 && frmt->prec <= 0) ||
+			!(frmt->base == 8 && (frmt->fl & SHARP)))
 		itoa_base(frmt, n, str);
 	print_all(frmt, str, frmt->len);
 	if (frmt->fl & MINUS)
