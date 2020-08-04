@@ -19,29 +19,29 @@
 # include <ctype.h>
 # include <stdio.h>
 
-# define PLUS		(1 << 0)
-# define MINUS		(1 << 1)
-# define SHARP		(1 << 2)
-# define ZERO		(1 << 3)
-# define SPACE		(1 << 4)
-# define PTRDIFF	(1 << 5)
+# define PLUS			(1 << 0)
+# define MINUS			(1 << 1)
+# define SHARP			(1 << 2)
+# define ZERO			(1 << 3)
+# define SPACE			(1 << 4)
+# define PTRDIFF		(1 << 5)
 
-# define SHORT		(1 << 6)
-# define SSHORT		(1 << 7)
-# define LONG		(1 << 8)
-# define LLONG		(1 << 9)
-# define UPPER		(1 << 10)
-# define INTMAX		(1 << 11)
-# define SIZE_T		(1 << 12)
-# define LDOUBLE	(1 << 13)
-# define PRECISION	(1 << 14)
-# define POINTER	(1 << 15)
+# define SHORT			(1 << 6)
+# define SSHORT			(1 << 7)
+# define LONG			(1 << 8)
+# define LLONG			(1 << 9)
+# define UPPER			(1 << 10)
+# define INTMAX			(1 << 11)
+# define SIZE_T			(1 << 12)
+# define LDOUBLE		(1 << 13)
+# define PRECISION		(1 << 14)
+# define POINTER		(1 << 15)
 
-# define LD_MASK 	0xFFF
-# define LD_CHECK	0x7FF
+# define LD_MASK 		0xFFF
+# define LD_CHECK		0x7FF
 
-# define LD_FRAC	0x000FFFFFFFFFFFFF
-# define LD_MASK_LONG 0x7FFFFFFFFFFFFFFF
+# define LD_FRAC		0x000FFFFFFFFFFFFF
+# define LD_MASK_LONG 	0x7FFFFFFFFFFFFFFF
 
 typedef struct	s_format
 {
@@ -66,6 +66,7 @@ typedef struct	s_double
 	long double	n;
 }				t_double;
 
+
 /*
 ** main function
 */
@@ -82,12 +83,13 @@ void			print_n(t_format *format);
 ** Parsing each argument's format string
 */
 void			parser(char **str, t_format *frmt);
-void			flag_and_width(char **str, t_format *frmt);
-void			precision_parser(char **str, t_format *frmt);
-void			length_parser(char **str, t_format *frmt);
-void			spec_parser(char **str, t_format *frmt);
+int32_t			flag_parser(char **str, t_format *frmt);
+int32_t			width_parser(char **str, t_format *frmt);
+int32_t			precision_parser(char **str, t_format *frmt);
+int32_t			length_parser(char **str, t_format *frmt);
+int32_t			spec_parser(char **str, t_format *frmt);
 void			base_parser(t_format *frmt);
-void			mode_parser(t_format *frmt);
+int32_t			mode_parser(t_format *frmt);
 void			set_upper_flag(char c, t_format *format);
 
 /*
@@ -122,8 +124,9 @@ void			print_aefg(t_format *frmt);
 */
 void			print_f(t_format *frmt, long double d);
 int				check_spec_val(t_format *frmt, long double n);
-void			print_sign(long double d, t_format *frmt);
-void			print_fraction(long double fraction, t_format *frmt);
+void			print_sign(t_double *d, t_format *frmt);
+void			print_fraction(t_double *t, t_format *frmt);
+void			set_parts(t_format *frmt, t_double *t);
 
 /*
 ** print A, E
@@ -215,4 +218,5 @@ char			*ft_strcpy(char *dst, const char *src);
 int				ft_isdigit(int c);
 char			*ft_strnew(size_t size);
 void			ft_bzero(void *s, size_t n);
+
 #endif

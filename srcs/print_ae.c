@@ -68,12 +68,12 @@ void	print_ae(t_format *frmt, long double d)
 	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
 	set_width_ae(doub->integer, frmt);
-	print_sign(d, frmt);
+	print_sign(doub, frmt);
 	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction)
 		: doub->integer;
 	print_itoa_base(n, frmt);
 	if (frmt->fl & SHARP || frmt->prec > 0)
-		print_fraction(doub->fraction, frmt);
+		print_fraction(doub, frmt);
 	print_exp(doub->exp, frmt);
 	if (frmt->fl & MINUS)
 		padding(frmt, ' ', frmt->width);

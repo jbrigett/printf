@@ -12,13 +12,18 @@
 
 #include "../includes/ft_printf.h"
 
-void		print_sign(long double d, t_format *frmt)
+void		print_sign(t_double *d, t_format *frmt)
 {
-	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
-		padding(frmt, ' ', frmt->width - frmt->len);
-	if (d < 0)
+	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO) && frmt->width > 0)
+		padding(frmt, ' ', frmt->width - frmt->prec - length_base(d->integer, 10));
+	if (d->n < 0)
 		print_all(frmt, "-", 1);
-	print_all(frmt, frmt->pref, ft_strlen(frmt->pref));
+	else if (frmt->fl & PLUS)
+		print_all(frmt, "+", 1);
+	else if (frmt->fl & SPACE)
+		print_all(frmt, " ", 1);
+	if ((d->n != 0.0) && frmt->fl & SHARP)
+		print_all(frmt, frmt->pref, ft_strlen(frmt->pref));
 }
 
 int			check_spec_val(t_format *frmt, long double n)
@@ -47,47 +52,74 @@ int			check_spec_val(t_format *frmt, long double n)
 	return (0);
 }
 
-void		print_fraction(long double fraction, t_format *frmt)
+void		print_fraction(t_double *t, t_format *frmt)
 {
-	uintmax_t abs_f;
-
 	print_all(frmt, ".", 1);
-	if (fraction == 0.0)
-		while (frmt->prec--)
-			print_all(frmt, "0", 1);
-	if (frmt->prec)
+	if (t->fraction == 0.0)
 	{
-		while (fraction < 0.1 && frmt->prec--)
-		{
-			print_all(frmt, "0", 1);
-			fraction *= frmt->base;
-		}
 		while (frmt->prec--)
-			fraction *= frmt->base;
-		abs_f = ft_roundl(fraction);
-		print_itoa_base(abs_f, frmt);
+			print_all(frmt, "0", 1);
+		return ;
+	}
+	else if (frmt->prec > 0)
+	{
+		while (frmt->len--)
+			print_all(frmt, "0", 1);
+		while (frmt->prec--)
+			t->fraction *= frmt->base;
+		print_itoa_base(ft_roundl(t->fraction), frmt);
+	}
+}
+
+void		set_parts(t_format *frmt, t_double *t)
+{
+	intmax_t	fr;
+	int32_t		tmp;
+
+	t->integer = (uint64_t)ft_fabsl(t->n);
+	(frmt->prec == 0) ? (t->integer = ft_imaxabs(ft_roundl(t->n))) : 0;
+	t->fraction = ft_fabsl(t->n) - t->integer;
+	tmp = frmt->prec;
+	if (frmt->prec && t->fraction != 0.0)
+	{
+		while (tmp--)
+			t->fraction *= frmt->base;
+		fr = ft_roundl(t->fraction);
+		tmp = (int32_t)length_base(fr, 10);
+		frmt->len = frmt->prec - tmp;
+		if (tmp > frmt->prec)
+		{
+			t->fraction = 0.0;
+			t->integer += 1;
+		}
+		else
+			t->fraction = ft_fabsl(t->n) - t->integer;
 	}
 }
 
 void		print_f(t_format *frmt, long double d)
 {
-	uint64_t	integer;
-	uintmax_t	n;
-	long double	fraction;
+	t_double	*t;
+	int32_t		tmp;
 
+	if (!(t = (t_double*)malloc(sizeof(t_double))))
+		return ;
 	if (check_spec_val(frmt, d))
 		return ;
-	integer = (uint64_t)ft_fabsl(d);
-	fraction = ft_fabsl(d) - integer;
-	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
+	t->n = d;
+	set_parts(frmt, t);
+	if ((d < 0) || (frmt->fl & PLUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
-	frmt->width -= (length_base(integer, frmt->base) + ft_strlen(frmt->pref));
-	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
-	print_sign(d, frmt);
-	n = (frmt->prec == 0) ? ft_imaxabs(ft_roundl(d)) : integer;
-	print_itoa_base(n, frmt);
-	if (frmt->fl & SHARP || frmt->prec > 0)
-		print_fraction(fraction, frmt);
+	set_width_ae(t->integer, frmt);
+	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO) && frmt->width > 0)
+		padding(frmt, ' ', frmt->width - frmt->len);
+	print_sign(t, frmt);
+	tmp = frmt->len;
+	frmt->len = (t->integer == 0) ? 1 : length_base(t->integer, 10);
+	print_itoa_base(t->integer, frmt);
+	frmt->len = tmp;
+	if (frmt->prec > 0)
+		print_fraction(t, frmt);
 	if (frmt->fl & MINUS)
-		padding(frmt, ' ', frmt->width);
+		padding(frmt, ' ',  frmt->width - frmt->prec - length_base(t->integer, 10));
 }

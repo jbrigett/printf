@@ -17,7 +17,7 @@ void	print_all(t_format *frmt, char *str, int len)
 	int i;
 
 	i = 0;
-	frmt->to_print += len;
+	len > 0 ? frmt->to_print += len : 0;
 	while (i < len)
 	{
 		write(frmt->fd, str, 1);
@@ -31,7 +31,7 @@ void	padding(t_format *frmt, char c, int len)
 	int i;
 
 	i = 0;
-	frmt->to_print += len;
+	len > 0 ? frmt->to_print += len : 0;
 	while (i < len)
 	{
 		write(frmt->fd, &c, 1);

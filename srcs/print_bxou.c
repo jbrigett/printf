@@ -43,7 +43,8 @@ void	set_width_base(t_format *frmt, uintmax_t n)
 	if (frmt->base == 8 && frmt->fl & SHARP && !n &&
 			frmt->fl & PRECISION && frmt->prec <= 0)
 		++frmt->len;
-	if (frmt->base != 8 && frmt->fl & SHARP && !(frmt->fl & ZERO))
+	if (frmt->base != 8 && frmt->fl & SHARP &&
+			((n != 0 && frmt->spec != 'p') || frmt->spec == 'p'))
 		frmt->width -= 2;
 }
 
@@ -71,7 +72,11 @@ void	print_bxou(t_format *frmt)
 {
 	uintmax_t n;
 
-	if (frmt->fl & LLONG)
+	if (frmt->fl & INTMAX)
+		n = va_arg(frmt->ap, uintmax_t);
+	else if (frmt->fl & SIZE_T)
+		n = (size_t)va_arg(frmt->ap, size_t);
+	else if (frmt->fl & LLONG)
 		n = va_arg(frmt->ap, unsigned long long);
 	else if (frmt->fl & LONG)
 		n = va_arg(frmt->ap, unsigned long);
@@ -79,12 +84,7 @@ void	print_bxou(t_format *frmt)
 		n = (unsigned short)va_arg(frmt->ap, unsigned int);
 	else if (frmt->fl & SSHORT)
 		n = (unsigned char)va_arg(frmt->ap, unsigned int);
-	else if (frmt->fl & SIZE_T)
-		n = (size_t)va_arg(frmt->ap, size_t);
-	else if (frmt->fl & INTMAX)
-		n = va_arg(frmt->ap, uintmax_t);
 	else
 		n = va_arg(frmt->ap, unsigned int);
-	(frmt->fl & ZERO) ? frmt->prec = frmt->width : 0;
 	settings_bxou(n, frmt);
 }

@@ -22,7 +22,6 @@ all: $(OBJ_DIR) $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-	@echo Create: ft_printf Object directory
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(addprefix $(OBJ_DIR), $(OFILE))

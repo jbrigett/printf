@@ -41,7 +41,7 @@ void	set_width(intmax_t n, t_format *frmt)
 
 void	settings_d(intmax_t n, t_format *frmt)
 {
-	char str[22];
+	char str[40];
 
 	if (frmt->fl & PRECISION)
 		frmt->fl &= ~ZERO;
@@ -61,7 +61,11 @@ void	print_di(t_format *frmt)
 {
 	intmax_t n;
 
-	if (frmt->fl & LLONG)
+	if (frmt->fl & INTMAX)
+		n = (intmax_t)va_arg(frmt->ap, intmax_t);
+	else if (frmt->fl & SIZE_T)
+		n = (size_t)va_arg(frmt->ap, size_t);
+	else if (frmt->fl & LLONG)
 		n = (long long)va_arg(frmt->ap, long long);
 	else if (frmt->fl & LONG)
 		n = (long)va_arg(frmt->ap, long);
@@ -69,12 +73,7 @@ void	print_di(t_format *frmt)
 		n = (short)va_arg(frmt->ap, int);
 	else if (frmt->fl & SSHORT)
 		n = (char)va_arg(frmt->ap, int);
-	else if (frmt->fl & SIZE_T)
-		n = (size_t)va_arg(frmt->ap, size_t);
-	else if (frmt->fl & INTMAX)
-		n = (intmax_t)va_arg(frmt->ap, intmax_t);
 	else
 		n = (int)va_arg(frmt->ap, int);
-	(frmt->fl & ZERO) ? frmt->prec = frmt->width : 0;
 	settings_d(n, frmt);
 }

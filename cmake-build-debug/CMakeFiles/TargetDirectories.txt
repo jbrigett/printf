@@ -1,3 +1,0 @@
-/Users/jbrigett/printf21/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/jbrigett/printf21/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/jbrigett/printf21/cmake-build-debug/CMakeFiles/printf.dir

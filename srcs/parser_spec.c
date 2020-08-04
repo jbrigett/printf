@@ -26,7 +26,7 @@ void	base_parser(t_format *frmt)
 		frmt->base = 0;
 }
 
-void	mode_parser(t_format *frmt)
+int32_t	mode_parser(t_format *frmt)
 {
 	if (ft_memchr("di", frmt->spec, 2))
 		print_di(frmt);
@@ -46,8 +46,11 @@ void	mode_parser(t_format *frmt)
 		print_p(frmt);
 	else if (frmt->spec == '%')
 		print_percent(frmt);
-	else
+	else if (ft_memchr("yqwt[{]}km<>?Z", frmt->spec, 15))
 		cs_not_found(frmt);
+	else
+		return (0);
+	return (1);
 }
 
 void	set_upper_flag(char c, t_format *format)
@@ -66,15 +69,15 @@ void	set_upper_flag(char c, t_format *format)
 		format->spec = c;
 }
 
-void	spec_parser(char **str, t_format *frmt)
+int32_t	spec_parser(char **str, t_format *frmt)
 {
-	if (!*str)
-		return ;
+	if (!(**str))
+		return (1);
 	if (ft_isupper(**str))
 		set_upper_flag(**str, frmt);
 	else
 		frmt->spec = **str;
 	++(*str);
 	base_parser(frmt);
-	mode_parser(frmt);
+	return (mode_parser(frmt));
 }

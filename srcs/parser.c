@@ -12,52 +12,72 @@
 
 #include "../includes/ft_printf.h"
 
-void	flag_and_width(char **str, t_format *frmt)
+int32_t	flag_parser(char **str, t_format *frmt)
 {
 	int n;
 
-	++(*str);
+	if (ft_strchr_index("+-#0 ", **str) == -1)
+		return (0);
 	while ((n = ft_strchr_index("+-#0 ", **str)) >= 0 && ++(*str))
 		frmt->fl |= (1 << n);
 	(frmt->fl & PLUS) ? frmt->fl &= ~SPACE : 0;
+	(frmt->fl & MINUS) ? frmt->fl &= ~ZERO : 0;
+	return (1);
+}
+
+int32_t	width_parser(char **str, t_format *frmt)
+{
+	int n;
+
 	if (**str == '*')
 	{
 		n = (int)va_arg(frmt->ap, int);
-		(n < 0) ? (frmt->fl |= MINUS) : (frmt->fl &= ~MINUS);
+		(n < 0) ? (frmt->fl |= MINUS) : 0;
+		(frmt->fl & MINUS) ? frmt->fl &= ~ZERO : 0;
 		n = (n < 0) ? -n : n;
 		frmt->width = n;
 		++(*str);
+		return (1);
 	}
-	else if ((frmt->width = ft_max(ft_atoi(*str), 1)))
+	else if ((n = ft_max(ft_atoi(*str), 0)))
+	{
+		if (ft_isdigit(**str))
+			frmt->width = n;
 		while (ft_isdigit(**str))
 			++(*str);
-}
-
-void	precision_parser(char **str, t_format *frmt)
-{
-	if (**str == '.')
-	{
-		frmt->fl |= PRECISION;
-		++(*str);
-		if (**str == '*')
-		{
-			if ((frmt->prec = (int)va_arg(frmt->ap, int)) < 0)
-				frmt->fl &= ~PRECISION;
-			++(*str);
-		}
-		else
-		{
-			frmt->prec = ft_max(ft_atoi(*str), 0);
-			while (ft_isdigit(**str))
-				++(*str);
-		}
+		return (1);
 	}
+	return (0);
 }
 
-void	length_parser(char **str, t_format *frmt)
+int32_t	precision_parser(char **str, t_format *frmt)
+{
+	if (**str != '.')
+		return (0);
+	frmt->fl |= PRECISION;
+	++(*str);
+	if (**str == '*')
+	{
+		if ((frmt->prec = (int)va_arg(frmt->ap, int)) < 0)
+		{
+			frmt->fl &= ~PRECISION;
+			frmt->prec = 1;
+		}
+		++(*str);
+	}
+	else
+	{
+		frmt->prec = ft_max(ft_atoi(*str), 0);
+		while (ft_isdigit(**str))
+			++(*str);
+	}
+	return (1);
+}
+
+int32_t	length_parser(char **str, t_format *frmt)
 {
 	if (!(ft_memchr("hljzL", **str, 5)))
-		return ;
+		return (0);
 	if (**str == 'h')
 		frmt->fl |= (*(*str + 1) == 'h') ? SSHORT : SHORT;
 	else if (**str == 'l')
@@ -69,15 +89,32 @@ void	length_parser(char **str, t_format *frmt)
 	else if (**str == 'L')
 		frmt->fl |= LLONG;
 	++(*str);
-	if (frmt->fl & LLONG || frmt->fl & SSHORT)
+	if (frmt->fl & LLONG && (**str == 'l'))
 		++(*str);
+	if (frmt->fl & SSHORT && (**str == 'h'))
+		++(*str);
+	return (1);
 }
 
 void	parser(char **str, t_format *frmt)
 {
+	++(*str);
+	if (!**str)
+		return ;
 	reinit_format(frmt);
-	flag_and_width(str, frmt);
-	precision_parser(str, frmt);
-	length_parser(str, frmt);
-	spec_parser(str, frmt);
+	while (21)
+	{
+		if (flag_parser(str, frmt) == 1)
+			continue ;
+		if (width_parser(str, frmt) == 1)
+			continue ;
+		if (precision_parser(str, frmt) == 1)
+			continue ;
+		if (length_parser(str, frmt) == 1)
+			continue ;
+		if (spec_parser(str, frmt) == 0)
+			continue ;
+		else
+			break ;
+	}
 }

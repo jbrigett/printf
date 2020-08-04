@@ -31,7 +31,7 @@ void	print_itoa_base(uintmax_t n, t_format *frmt)
 {
 	uintmax_t	tmp;
 	size_t		len;
-	char		str[33];
+	char		str[40];
 
 	len = 1;
 	tmp = 33;

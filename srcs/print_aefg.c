@@ -22,13 +22,13 @@ void	print_aefg(t_format *frmt)
 		n = (double)va_arg(frmt->ap, double);
 	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
 	frmt->pref = "";
-	if (frmt->spec == 'a')
+	if (frmt->spec == 'f')
+		print_f(frmt, n);
+	else if (frmt->spec == 'a')
 	{
 		frmt->pref = (frmt->fl & UPPER) ? "0X" : "0x";
 		print_ae(frmt, n);
 	}
-	else if (frmt->spec == 'f')
-		print_f(frmt, n);
 	else if (frmt->spec == 'g')
 		print_g(frmt, n);
 	else if (frmt->spec == 'e')

@@ -102,8 +102,8 @@ void		print_c(t_format *frmt)
 	c = (wint_t)c;
 	frmt->width = (frmt->width > 0) ? frmt->width - ft_wcharlen(c) : 0;
 	if (!(frmt->fl & MINUS) && frmt->width > 0)
-		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width - 1);
+		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ', frmt->width);
 	print_wchar(c, frmt);
 	if (frmt->fl & MINUS && frmt->width > 0)
-		padding(frmt, ' ', frmt->width - 1);
+		padding(frmt, ' ', frmt->width);
 }
