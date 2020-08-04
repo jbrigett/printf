@@ -48,9 +48,13 @@ void	print_exp(int64_t exp, t_format *frmt)
 	print_itoa_base(ft_imaxabs(exp), frmt);
 }
 
-void	set_width_ae(uint64_t integer, t_format *frmt)
+void	set_width_ae(t_double *d, t_format *frmt)
 {
-	frmt->width -= length_base(integer, frmt->base);
+	if (((d->n < 0) || (1 / d->n < 0 && d->n == 0)) || (frmt->fl & PLUS) || (frmt->fl & SPACE))
+		frmt->width -= 1;
+	if (frmt->fl & SHARP || frmt->prec > 0)
+		frmt->width -= 1;
+	frmt->width -= length_base(d->integer, frmt->base);
 	frmt->width -= ft_strlen(frmt->pref);
 	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
 }
@@ -65,9 +69,7 @@ void	print_ae(t_format *frmt, long double d)
 	doub->n = d;
 	set_exp(doub, frmt);
 	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
-	if ((d < 0) || (frmt->fl & MINUS) || (frmt->fl & SPACE))
-		frmt->width -= 1;
-	set_width_ae(doub->integer, frmt);
+	set_width_ae(doub, frmt);
 	print_sign(doub, frmt);
 	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction)
 		: doub->integer;

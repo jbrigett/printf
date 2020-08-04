@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:54:40 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/22 18:27:34 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/08/04 17:19:45 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void		print_sign(t_double *d, t_format *frmt)
 {
-	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO) && frmt->width > 0)
-		padding(frmt, ' ', frmt->width - frmt->prec - length_base(d->integer, 10));
+	if (!(frmt->fl & MINUS) && frmt->width > 0)
+		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ',
+				frmt->width - frmt->prec - length_base(d->integer, 10));
 	if (d->n < 0)
 		print_all(frmt, "-", 1);
+	if (((1 / d->n) < 0) && (d->n == 0))
+		print_all(frmt, "t", 1);
 	else if (frmt->fl & PLUS)
 		print_all(frmt, "+", 1);
 	else if (frmt->fl & SPACE)
@@ -33,7 +36,7 @@ int			check_spec_val(t_format *frmt, long double n)
 
 	dn = (double)n;
 	integ = *(uint64_t*)&dn;
-	if (((integ >> 52) & LD_MASK) == LD_CHECK)
+	if (((integ >> 52) & LD_MASK) == LD_MASK)
 	{
 		if (integ & LD_FRAC)
 			print_all(frmt, (frmt->fl & UPPER) ? "INF" : "inf", 3);
@@ -41,7 +44,7 @@ int			check_spec_val(t_format *frmt, long double n)
 			print_all(frmt, (frmt->fl & UPPER) ? "NAN" : "nan", 3);
 		return (1);
 	}
-	else if (((integ >> 52) & LD_MASK) == LD_MASK)
+	else if (((integ >> 52) & LD_MASK) == LD_CHECK)
 	{
 		if (integ & LD_FRAC)
 			print_all(frmt, (frmt->fl & UPPER) ? "-INF" : "inf", 4);
@@ -106,20 +109,19 @@ void		print_f(t_format *frmt, long double d)
 		return ;
 	if (check_spec_val(frmt, d))
 		return ;
+	//if (d >> 80 & 1)
+	//	print_all(frmt, "!", 1);
 	t->n = d;
 	set_parts(frmt, t);
-	if ((d < 0) || (frmt->fl & PLUS) || (frmt->fl & SPACE))
-		frmt->width -= 1;
-	set_width_ae(t->integer, frmt);
-	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO) && frmt->width > 0)
-		padding(frmt, ' ', frmt->width - frmt->len);
+	set_width_ae(t, frmt);
 	print_sign(t, frmt);
 	tmp = frmt->len;
-	frmt->len = (t->integer == 0) ? 1 : length_base(t->integer, 10);
+	frmt->len = length_base(t->integer, 10);
 	print_itoa_base(t->integer, frmt);
 	frmt->len = tmp;
-	if (frmt->prec > 0)
+	if (frmt->fl & SHARP || frmt->prec > 0)
 		print_fraction(t, frmt);
 	if (frmt->fl & MINUS)
-		padding(frmt, ' ',  frmt->width - frmt->prec - length_base(t->integer, 10));
+		padding(frmt, ' ', frmt->width - frmt->prec -
+				length_base(t->integer, 10));
 }

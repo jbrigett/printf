@@ -40,7 +40,7 @@ void	print_itoa_base(uintmax_t n, t_format *frmt)
 	tmp = n;
 	while ((tmp /= frmt->base) > 0)
 		++len;
-	if ((n == 0) && (frmt->fl & PRECISION) && (frmt->prec == 0))
+	if ((n == 0) && frmt->fl & PRECISION && (frmt->prec == 0) && frmt->spec != 'f')
 		str[0] = '\0';
 	else if (n == 0)
 		str[0] = '0';

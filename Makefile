@@ -26,7 +26,6 @@ $(OBJ_DIR):
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(addprefix $(OBJ_DIR), $(OFILE))
 	@ranlib $(NAME)
-	@echo FT_PRINTF COMPLETE
 
 $(OBJ): $(CFIND)
 	@$(MAKE) $(OFILE)
@@ -36,10 +35,8 @@ $(OFILE):
 
 clean:
 	@/bin/rm -rf $(OBJ_DIR)
-	@echo Cleaned ft_printf object files
 
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@echo Cleaned $(NAME)
 
 re: fclean all

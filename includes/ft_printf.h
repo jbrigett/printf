@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 18:31:04 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/22 18:37:26 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/08/04 17:04:03 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ typedef struct	s_double
 	long double	fraction;
 	long double	n;
 }				t_double;
-
 
 /*
 ** main function
@@ -134,7 +133,7 @@ void			set_parts(t_format *frmt, t_double *t);
 void			print_ae(t_format *frmt, long double d);
 void			set_exp(t_double *doub, t_format *frmt);
 void			print_exp(int64_t exp, t_format *frmt);
-void			set_width_ae(uint64_t integer, t_format *frmt);
+void			set_width_ae(t_double *d, t_format *frmt);
 
 /*
 ** print G

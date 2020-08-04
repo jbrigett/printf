@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 15:01:17 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/07/21 15:01:57 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/08/04 17:01:08 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	cs_not_found(t_format *frmt)
 {
-
 	if (!frmt->spec)
 		return ;
 	frmt->width = (frmt->width > 0) ? frmt->width - 1 : 0;
