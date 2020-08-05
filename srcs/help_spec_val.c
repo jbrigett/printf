@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	help_nan(t_format *frmt)
+void	help_nan(t_format *frmt, uint64_t integ)
 {
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
 		padding(frmt, ' ', frmt->width - 3);
@@ -12,7 +12,7 @@ void	help_nan(t_format *frmt)
 		padding(frmt, ' ', frmt->width - 3);
 }
 
-void	help_inf(t_format *frmt)
+void	help_inf(t_format *frmt, uint64_t integ)
 {
 	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
 		padding(frmt, ' ', frmt->width - 4);

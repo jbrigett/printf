@@ -29,8 +29,10 @@ int main()
 //	ft_printf("%.0f   ", -0.0);
 
 	t = -5.0;
-	ft_printf("% #-5.1f.", -7.3);
-	printf("\n% #-5.1f.", -7.3);
+	ft_printf("%.0f", 4.5);
+	printf("\n%.0f", 3.5);
+
+//	printf("%ls", NULL);
 //	ft_printf("%f %lf %Lf", 1.42, 1.42, 1.42l);
 //	printf("\n%f %lf %Lf", 1.42, 1.42, 1.42l);
 

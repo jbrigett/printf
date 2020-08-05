@@ -28,27 +28,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad40e35b-a1be-4f7f-b747-1c489bb4860f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/srcs/help_spec_val.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/libft.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/libft.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/parser_spec.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser_spec.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_ae.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_ae.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_aefg.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_aefg.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_all.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_all.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_c.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_di.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_di.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/help_float.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/help_float.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/print_f.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_f.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/print_g.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_g.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pft/unit_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/pft/unit_tests.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/print_ae.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_ae.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_printf.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/help_float.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/help_float.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/help_spec_val.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/help_spec_val.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/print_f.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_f.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -123,6 +117,7 @@
       <workItem from="1596471288421" duration="41485000" />
       <workItem from="1596549499241" duration="6975000" />
       <workItem from="1596618542797" duration="2174000" />
+      <workItem from="1596625163445" duration="3300000" />
     </task>
     <servers />
   </component>

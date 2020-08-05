@@ -37,12 +37,12 @@ int			check_spec_val(t_format *frmt, long double n)
 	integ = *(uint64_t*)&dn;
 	if (((integ >> 52) & LD_MASK) == LD_MASK)
 	{
-		help_inf(frmt);
+		help_nan(frmt, integ);
 		return (1);
 	}
 	else if (((integ >> 52) & LD_MASK) == LD_CHECK)
 	{
-		help_nan(frmt);
+		help_inf(frmt, integ);
 		return (1);
 	}
 	return (0);

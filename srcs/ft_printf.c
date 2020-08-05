@@ -60,6 +60,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 			else
 			{
 				write(fd, str, 1);
+				str++;
 				frmt->to_print++;
 			}
 		}

@@ -29,10 +29,12 @@ intmax_t	ft_roundl(long double d)
 
 	integ = (intmax_t)d;
 	fract = d - integ;
-	if (d >= 0)
-		return ((fract < 0.5 || fract == 0.5) ? integ : (integ + 1));
+	if (fract <= -0.5 && d < 0)
+		return (integ - 1);
+	else if (fract >= 0.5 && d > 0)
+		return (integ + 1);
 	else
-		return ((fract > -0.5 || fract == -0.5) ? integ : (integ - 1));
+		return (integ);
 }
 
 size_t		length_base(uintmax_t n, int8_t base)
