@@ -14,17 +14,16 @@
 
 void		print_sign(t_double *d, t_format *frmt)
 {
-	if (!(frmt->fl & MINUS) && frmt->width > 0)
-		padding(frmt, (frmt->fl & ZERO) ? '0' : ' ',
-				frmt->width - frmt->prec - length_base(d->integer, 10));
-	if (d->n < 0)
+	if (!(frmt->fl & MINUS) && !(frmt->fl & ZERO))
+		padding(frmt, ' ', frmt->width);
+	if (d->sign)
 		print_all(frmt, "-", 1);
-	if (((1 / d->n) < 0) && (d->n == 0))
-		print_all(frmt, "t", 1);
 	else if (frmt->fl & PLUS)
 		print_all(frmt, "+", 1);
 	else if (frmt->fl & SPACE)
 		print_all(frmt, " ", 1);
+	if (!(frmt->fl & MINUS) && (frmt->fl & ZERO))
+		padding(frmt, '0', frmt->width);
 	if ((d->n != 0.0) && frmt->fl & SHARP)
 		print_all(frmt, frmt->pref, ft_strlen(frmt->pref));
 }
@@ -38,18 +37,12 @@ int			check_spec_val(t_format *frmt, long double n)
 	integ = *(uint64_t*)&dn;
 	if (((integ >> 52) & LD_MASK) == LD_MASK)
 	{
-		if (integ & LD_FRAC)
-			print_all(frmt, (frmt->fl & UPPER) ? "INF" : "inf", 3);
-		else
-			print_all(frmt, (frmt->fl & UPPER) ? "NAN" : "nan", 3);
+		help_inf(frmt);
 		return (1);
 	}
 	else if (((integ >> 52) & LD_MASK) == LD_CHECK)
 	{
-		if (integ & LD_FRAC)
-			print_all(frmt, (frmt->fl & UPPER) ? "-INF" : "inf", 4);
-		else
-			print_all(frmt, (frmt->fl & UPPER) ? "-NAN" : "-nan", 4);
+		help_nan(frmt);
 		return (1);
 	}
 	return (0);
@@ -79,6 +72,7 @@ void		set_parts(t_format *frmt, t_double *t)
 	intmax_t	fr;
 	int32_t		tmp;
 
+	t->sign = (*((unsigned long *)&t->n + 1) & (unsigned long)0x8000) >> 15;
 	t->integer = (uint64_t)ft_fabsl(t->n);
 	(frmt->prec == 0) ? (t->integer = ft_imaxabs(ft_roundl(t->n))) : 0;
 	t->fraction = ft_fabsl(t->n) - t->integer;
@@ -109,8 +103,6 @@ void		print_f(t_format *frmt, long double d)
 		return ;
 	if (check_spec_val(frmt, d))
 		return ;
-	//if (d >> 80 & 1)
-	//	print_all(frmt, "!", 1);
 	t->n = d;
 	set_parts(frmt, t);
 	set_width_ae(t, frmt);
@@ -122,6 +114,5 @@ void		print_f(t_format *frmt, long double d)
 	if (frmt->fl & SHARP || frmt->prec > 0)
 		print_fraction(t, frmt);
 	if (frmt->fl & MINUS)
-		padding(frmt, ' ', frmt->width - frmt->prec -
-				length_base(t->integer, 10));
+		padding(frmt, ' ', frmt->width);
 }

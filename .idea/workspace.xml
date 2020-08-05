@@ -28,16 +28,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad40e35b-a1be-4f7f-b747-1c489bb4860f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/srcs/help_spec_val.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/itoa_base.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/itoa_base.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/libft.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/libft.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/parser.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/parser_spec.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parser_spec.o" afterDir="false" />
@@ -49,12 +48,10 @@
       <change beforePath="$PROJECT_DIR$/obj/print_f.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_f.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/print_g.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/print_g.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pft/unit_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/pft/unit_tests.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/itoa_base.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/itoa_base.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/not_found.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/not_found.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/parser_spec.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/parser_spec.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/print_ae.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_ae.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/print_f.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/print_f.c" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,6 +88,18 @@
       <recent name="$PROJECT_DIR$/includes" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -113,23 +122,25 @@
       <workItem from="1596406220220" duration="29256000" />
       <workItem from="1596471288421" duration="41485000" />
       <workItem from="1596549499241" duration="6975000" />
+      <workItem from="1596618542797" duration="2174000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="789" y="359" key="SettingsEditor" timestamp="1595332651755">

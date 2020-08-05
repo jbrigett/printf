@@ -50,13 +50,13 @@ void	print_exp(int64_t exp, t_format *frmt)
 
 void	set_width_ae(t_double *d, t_format *frmt)
 {
-	if (((d->n < 0) || (1 / d->n < 0 && d->n == 0)) || (frmt->fl & PLUS) || (frmt->fl & SPACE))
+	if (d->sign || (frmt->fl & PLUS) || (frmt->fl & SPACE))
 		frmt->width -= 1;
 	if (frmt->fl & SHARP || frmt->prec > 0)
 		frmt->width -= 1;
 	frmt->width -= length_base(d->integer, frmt->base);
 	frmt->width -= ft_strlen(frmt->pref);
-	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec + 1;
+	frmt->width -= (frmt->prec == 0) ? 0 : frmt->prec;
 }
 
 void	print_ae(t_format *frmt, long double d)

@@ -64,6 +64,7 @@ typedef struct	s_double
 	int64_t		exp;
 	long double	fraction;
 	long double	n;
+	int			sign;
 }				t_double;
 
 /*
@@ -126,6 +127,8 @@ int				check_spec_val(t_format *frmt, long double n);
 void			print_sign(t_double *d, t_format *frmt);
 void			print_fraction(t_double *t, t_format *frmt);
 void			set_parts(t_format *frmt, t_double *t);
+void			help_nan(t_format *frmt);
+void			help_inf(t_format *frmt);
 
 /*
 ** print A, E

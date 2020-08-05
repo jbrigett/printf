@@ -3,9 +3,7 @@
 
 int main()
 {
-	int         n;
-	long double  t;
-	long double  k;
+	double  t;
 	// %hh d - пропуск ненужных символов
 //	ft_printf(" %hh d ", 44);
 //	printf("%hh d\n", 44);
@@ -30,13 +28,9 @@ int main()
 
 //	ft_printf("%.0f   ", -0.0);
 
-k = 0.0;
-	t = -0.0;
-	k = t;
-	if ((t & (1 << 80))
-		printf(" . ");
-	printf("%Lf ", t);
-	ft_printf("%Lf", k);
+	t = -5.0;
+	ft_printf("% #-5.1f.", -7.3);
+	printf("\n% #-5.1f.", -7.3);
 //	ft_printf("%f %lf %Lf", 1.42, 1.42, 1.42l);
 //	printf("\n%f %lf %Lf", 1.42, 1.42, 1.42l);
 
