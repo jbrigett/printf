@@ -63,7 +63,7 @@ void		print_fraction(t_double *t, t_format *frmt)
 			print_all(frmt, "0", 1);
 		while (frmt->prec--)
 			t->fraction *= frmt->base;
-		print_itoa_base(ft_roundl(t->fraction), frmt);
+		print_itoa_base(ft_roundl(t->fraction, 1), frmt);
 	}
 }
 
@@ -74,14 +74,15 @@ void		set_parts(t_format *frmt, t_double *t)
 
 	t->sign = (*((unsigned long *)&t->n + 1) & (unsigned long)0x8000) >> 15;
 	t->integer = (uint64_t)ft_fabsl(t->n);
-	(frmt->prec == 0) ? (t->integer = ft_imaxabs(ft_roundl(t->n))) : 0;
+	if (frmt->prec == 0)
+		t->integer = ft_imaxabs(ft_roundl(t->n, (frmt->prec == 0 && t->integer % 2 != 0) ? 1 : 0));
 	t->fraction = ft_fabsl(t->n) - t->integer;
 	tmp = frmt->prec;
 	if (frmt->prec && t->fraction != 0.0)
 	{
 		while (tmp--)
 			t->fraction *= frmt->base;
-		fr = ft_roundl(t->fraction);
+		fr = ft_roundl(t->fraction, 1);
 		tmp = (int32_t)length_base(fr, 10);
 		frmt->len = frmt->prec - tmp;
 		if (tmp > frmt->prec)

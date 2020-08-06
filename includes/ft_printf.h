@@ -194,7 +194,7 @@ char			*ft_strndup(const char *s1, size_t n);
 ** HELP FUNCTIONS FOR FLOAT
 */
 long double		ft_fabsl(long double d);
-intmax_t		ft_roundl(long double d);
+intmax_t		ft_roundl(long double d, int32_t);
 uintmax_t		ft_imaxabs(intmax_t n);
 
 /*

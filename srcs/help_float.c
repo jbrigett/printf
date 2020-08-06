@@ -22,16 +22,20 @@ uintmax_t	ft_imaxabs(intmax_t d)
 	return ((d < 0) ? -d : d);
 }
 
-intmax_t	ft_roundl(long double d)
+intmax_t	ft_roundl(long double d, int32_t prec)
 {
 	intmax_t	integ;
 	long double	fract;
 
 	integ = (intmax_t)d;
 	fract = d - integ;
-	if (fract <= -0.5 && d < 0)
+	if (fract <= -0.5 && d < 0 && prec != 0)
 		return (integ - 1);
-	else if (fract >= 0.5 && d > 0)
+	else if (fract >= 0.5 && d > 0 && prec != 0)
+		return (integ + 1);
+	if (fract < -0.5 && d < 0 && prec == 0)
+		return (integ - 1);
+	else if (fract > 0.5 && d > 0 && prec == 0)
 		return (integ + 1);
 	else
 		return (integ);

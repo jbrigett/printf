@@ -71,7 +71,7 @@ void	print_ae(t_format *frmt, long double d)
 	(!(frmt->fl & PRECISION)) ? frmt->prec = 6 : 0;
 	set_width_ae(doub, frmt);
 	print_sign(doub, frmt);
-	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction)
+	n = (frmt->prec == 0) ? ft_roundl(doub->integer + doub->fraction, 0)
 		: doub->integer;
 	print_itoa_base(n, frmt);
 	if (frmt->fl & SHARP || frmt->prec > 0)
