@@ -18,14 +18,14 @@ OFILE = $(SRCS:%.c=%.o)
 
 OBJ = $(addprefix $(OBJ_DIR), $(OFILE))
 
-all: $(OBJ_DIR) $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJ_DIR)  $(OBJ)
+	@ar rc $(NAME) $(addprefix $(OBJ_DIR), $(OFILE))
+	@ranlib $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-
-$(NAME): $(OBJ)
-	@ar rc $(NAME) $(addprefix $(OBJ_DIR), $(OFILE))
-	@ranlib $(NAME)
 
 $(OBJ): $(CFIND)
 	@$(MAKE) $(OFILE)

@@ -14,12 +14,16 @@
 
 long double	ft_fabsl(long double d)
 {
-	return ((d < 0) ? -d : d);
+	return (d < 0 ? -d : d);
 }
 
 uintmax_t	ft_imaxabs(intmax_t d)
 {
-	return ((d < 0) ? -d : d);
+	intmax_t mask;
+
+	mask = (d >> (sizeof(d) * CHAR_BIT - 1));
+	d = (uintmax_t)((d + mask) ^ mask);
+	return (d);
 }
 
 intmax_t	ft_roundl(long double d, int32_t prec)

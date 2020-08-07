@@ -87,7 +87,7 @@ int32_t	length_parser(char **str, t_format *frmt)
 	else if (**str == 'z')
 		frmt->fl |= SIZE_T;
 	else if (**str == 'L')
-		frmt->fl |= LLONG;
+		frmt->fl |= LDOUBLE;
 	++(*str);
 	if (frmt->fl & LLONG && (**str == 'l'))
 		++(*str);

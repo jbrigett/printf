@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 18:31:04 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/08/04 17:04:03 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/08/06 13:30:13 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # include <ctype.h>
 # include <stdio.h>
+# include <limits.h>
 
 # define PLUS			(1 << 0)
 # define MINUS			(1 << 1)
@@ -194,7 +195,7 @@ char			*ft_strndup(const char *s1, size_t n);
 ** HELP FUNCTIONS FOR FLOAT
 */
 long double		ft_fabsl(long double d);
-intmax_t		ft_roundl(long double d, int32_t);
+intmax_t		ft_roundl(long double d, int32_t prec);
 uintmax_t		ft_imaxabs(intmax_t n);
 
 /*

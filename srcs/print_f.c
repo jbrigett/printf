@@ -6,7 +6,7 @@
 /*   By: jbrigett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 18:54:40 by jbrigett          #+#    #+#             */
-/*   Updated: 2020/08/04 17:19:45 by jbrigett         ###   ########.fr       */
+/*   Updated: 2020/08/06 13:28:37 by jbrigett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void		set_parts(t_format *frmt, t_double *t)
 	t->sign = (*((unsigned long *)&t->n + 1) & (unsigned long)0x8000) >> 15;
 	t->integer = (uint64_t)ft_fabsl(t->n);
 	if (frmt->prec == 0)
-		t->integer = ft_imaxabs(ft_roundl(t->n, (frmt->prec == 0 && t->integer % 2 != 0) ? 1 : 0));
+		t->integer = ft_imaxabs(ft_roundl(t->n,
+					(frmt->prec == 0 && t->integer % 2 != 0) ? 1 : 0));
 	t->fraction = ft_fabsl(t->n) - t->integer;
 	tmp = frmt->prec;
 	if (frmt->prec && t->fraction != 0.0)
